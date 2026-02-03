@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CrazyForAi – Workflow Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      background: #f9fafb;
+      color: #111827;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 16px 20px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+
+    .tab {
+      padding: 14px 18px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      font-weight: 500;
+    }
+
+    .tab.active {
+      border-bottom-color: #2563eb;
+      color: #2563eb;
+    }
+
+    .content {
+      padding: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    h1, h2, h3 {
+      margin-top: 28px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 12px 0;
+    }
+
+    ul {
+      margin-left: 20px;
+      line-height: 1.6;
+    }
+
+    blockquote {
+      border-left: 4px solid #2563eb;
+      padding-left: 16px;
+      margin: 16px 0;
+      color: #374151;
+      background: #f1f5f9;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    CrazyForAi – Thinking-First Shipping Workflow
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="guide">Workflow Guide</div>
+    <div class="tab" data-tab="empty">Tab 2</div>
+  </div>
+
+  <div class="content">
+    <div id="guide" class="tab-panel active">
+
+      <h1>Shipping Products Without Reading a Single Line of Code</h1>
+
+      <p>
+        This repository defines a <strong>thinking-first, execution-second workflow</strong>
+        that enables non-technical users to design and build small, production-ready
+        web applications using AI — without writing code.
+      </p>
+    </div>
+
+    <div id="empty" class="tab-panel">
+      <!-- Intentionally left empty -->
+    </div>
+  </div>
+
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
