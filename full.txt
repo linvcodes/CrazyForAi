@@ -1,0 +1,251 @@
+
+"
+# Shipping Products Without Reading a Single Line of Code
+
+This repository defines a **thinking-first, execution-second workflow** that enables non-technical users to design and build small, production-ready web applications using AI — without writing code.
+
+The workflow is intentionally **tool-agnostic** and works with:
+- **ChatGPT (Free or Plus)** for reasoning, research, clarification, and specification
+- **Replit (Free tier)** for execution and hosting
+
+The core idea is simple:
+
+> **ChatGPT does the thinking.  
+> Replit does the building.**
+
+The user never manually designs architecture or implementation.  
+All reasoning is handled conversationally by ChatGPT and **distilled into a single, exact execution prompt** for Replit at the end.
+
+---
+
+## Core Rules
+
+- Do not generate code until logic is fully specified.
+- Do not allow AI to guess behavior.
+- One final build prompt per project.
+- Execution tools must not make product decisions.
+- All complexity must be resolved in ChatGPT, not during execution.
+
+---
+
+## Tool Responsibilities
+
+### ChatGPT (Free or Plus)
+
+Used for:
+- Guiding the user through structured questions
+- Understanding real-life problems through conversation
+- Running web search or deep research when needed
+- Clarifying domain language and intent
+- Defining rules, constraints, invariants, and edge cases
+- Translating human needs into explicit system behavior
+- **Distilling the entire chat history into one precise, Replit-ready build prompt**
+
+ChatGPT is responsible for **all thinking**.
+
+---
+
+### Replit (Free Tier)
+
+Used only for:
+- Executing the final build prompt
+- Generating code from a fully specified instruction
+- Running the application
+- Persisting data locally
+- Applying small, logic-preserving fixes if required
+
+Replit must not infer product logic or intent.
+
+---
+
+## The Production Workflow
+
+Follow the steps **in order**.  
+Do not skip steps.  
+Do not build early.
+
+---
+
+### STEP 0 — Lock Global Constraints
+
+Before any problem-solving, ChatGPT must confirm global constraints such as:
+- Single-page application
+- Offline-capable
+- No APIs, keys, or authentication
+- File-based data persistence
+- Beginner-friendly UX
+- Minimal user input → automatic processing → clear output
+
+**Output:**  
+Confirmed constraint list.
+
+---
+
+### STEP 1 — Understand the User’s Life
+
+ChatGPT asks **only** these three questions:
+
+1. What do you do day-to-day?
+2. What part of that feels repetitive, annoying, or mentally draining?
+3. What do you constantly re-check, worry about, or feel unsure of?
+
+**Output:**  
+Raw human context. No solutions, no features.
+
+---
+
+### STEP 2 — Translate Pain into Problems
+
+ChatGPT:
+- Converts the answers into 2–3 clear, concrete problems
+- Explains them back in simple, non-technical language
+- Asks for confirmation or correction
+
+**Output:**  
+Confirmed problem statements.
+
+---
+
+### STEP 3 — Validate Demand
+
+ChatGPT uses **web search or deep research** to:
+- Verify that other people experience the same problems
+- Confirm the problem is recurring and real
+- Summarize findings in plain language
+
+**Output:**  
+Validated problem worth solving.
+
+---
+
+### STEP 4 — Lock Domain Language
+
+ChatGPT explicitly defines:
+- Key terms used in the domain
+- What each term means
+- What each term does *not* mean
+- Which concepts must never overlap
+
+This prevents semantic ambiguity later.
+
+**Output:**  
+Approved domain vocabulary.
+
+---
+
+### STEP 5 — Define Invariants & Illegal States
+
+ChatGPT locks:
+- What values can only increase or decrease
+- What actions must never be allowed
+- What states are invalid
+- What affects totals vs what does not
+
+These rules define system truth and must never be violated.
+
+**Output:**  
+Confirmed invariant rules.
+
+---
+
+### STEP 6 — Define State Mutation Rules
+
+ChatGPT explains, in plain language:
+- What happens internally when each action occurs
+- How values change
+- When changes apply (instant, monthly, scheduled)
+- Whether actions are reversible
+
+No UI.  
+No code.
+
+**Output:**  
+Approved logic model.
+
+---
+
+### STEP 7 — Map Intent to UI
+
+ChatGPT maps:
+- One user action → one intent
+- Buttons vs drag actions
+- Separate sections for separate concepts
+- Clear separation between different types of actions
+
+No overloaded controls.  
+No mixed intent.
+
+**Output:**  
+Final UI behavior specification.
+
+---
+
+### STEP 8 — Logic Confirmation Gate
+
+Before any code is generated, ChatGPT must:
+- Summarize the entire system back to the user
+- Ask for explicit approval
+
+If rejected, return to the relevant step.
+
+**Output:**  
+Final confirmation to build.
+
+---
+
+### STEP 9 — Generate the Final Build Prompt
+
+ChatGPT produces **one complete build prompt** that:
+- Encodes all clarified needs
+- Encodes all rules and constraints
+- Encodes all UI behavior
+- Encodes all data persistence requirements
+- Explicitly states what must *not* be included
+
+This prompt is the **distilled result of the entire chat conversation**.
+
+No placeholders.  
+No future work.  
+No explanations after the prompt.
+
+**Output:**  
+Single Replit-ready build prompt.
+
+---
+
+### STEP 10 — Execute in Replit
+
+In Replit:
+1. Create a new project
+2. Use “Build from prompt”
+3. Paste the final build prompt
+4. Let execution complete without interruption
+
+All fixes must originate from revisiting the thinking steps, not ad-hoc code changes.
+
+---
+
+## Execution Rules
+
+- Do not redesign after build
+- Do not add features mid-execution
+- Do not refactor logic directly in code
+- If behavior is wrong, return to ChatGPT and refine the specification
+
+---
+
+## Final Note
+
+This workflow ensures that:
+- Human intent is fully understood before execution
+- AI reasoning is explicit and verified
+- Technical implementation is deterministic
+- Execution tools never guess
+
+If something breaks, the issue is not code —  
+it is **underspecified thinking**.
+
+Fix the thinking.  
+Then rebuild.
+
+"

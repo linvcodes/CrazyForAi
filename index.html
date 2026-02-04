@@ -1,50 +1,536 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>CrazyForAi – Workflow Guide</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body { font-family: system-ui, -sans-serif; margin: 0; background: #f9fafb; color: #111827; }
-    header { background: #111827; color: #fff; padding: 16px 20px; font-weight: 600; }
-    .tabs { display: flex; border-bottom: 1px solid #e5e7eb; background: #fff; }
-    .tab { padding: 14px 18px; cursor: pointer; border-bottom: 3px solid transparent; }
-    .tab.active { border-bottom-color: #2563eb; color: #2563eb; }
-    .content { padding: 24px; max-width: 900px; margin: 0 auto; }
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-    p { line-height: 1.6; }
-    blockquote { border-left: 4px solid #2563eb; padding-left: 16px; margin: 16px 0; background: #f1f5f9; }
-  </style>
-</head>
-<body>
-<header>CrazyForAi – Thinking-First Workflow</header>
-<div class="tabs">
-  <div class="tab active" data-tab="guide">Workflow Guide</div>
-  <div class="tab" data-tab="tab2">Tab 2</div>
-</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CrazyForAI</title>
+    <meta name="theme-color" content="#0f1720">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <a href="/" class="logo">CrazyForAI</a>
+      </div>
+    </header>
 
-<div class="content">
-<div id="guide" class="tab-panel active">
-<h1>Shipping Products Without Reading a Single Line of Code</h1>
-<p>This repository defines a <strong>thinking-first, execution-second workflow</strong> that enables non-technical users to design and build small, production-ready web applications using AI — without writing code.</p>
-<h2>Core Rules</h2>
-<ul><li>Do not generate code until logic is fully specified.</li><li>Do not allow AI to guess behavior.</li><li>One final build prompt per project.</li><li>Execution tools must not make product decisions.</li></ul>
-</div>
-<div id="tab2" class="tab-panel"></div>
-</div>
+    <div class="view-toggle">
+      <button class="toggle-btn active" data-view="workflow">AI Agent Workflow</button>
+      <button class="toggle-btn" data-view="prompt">ChatGPT Master Prompt</button>
+      <button class="toggle-btn" data-view="demo">Live Demo</button>
+    </div>
 
-<script>
-const tabs = document.querySelectorAll(".tab");
-const panels = document.querySelectorAll(".tab-panel");
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(t => t.classList.remove("active"));
-    panels.forEach(p => p.classList.remove("active"));
-    tab.classList.add("active");
-    document.getElementById(tab.dataset.tab).classList.add("active");
-  });
-});
-</script>
-</body>
+    <main class="container">
+      <!-- Workflow View -->
+      <div id="workflow-view" class="content-view active">
+        <section class="hero">
+          <h1>Shipping Products Without Code</h1>
+          <p class="lead">A thinking-first, execution-second workflow for building production-ready web apps using AI</p>
+          <div class="tools-used">
+            <strong>Used:</strong>
+            <ul class="tool-list">
+              <li>
+                <a href="https://replit.com" target="_blank" rel="noopener noreferrer" class="tool-link">Replit</a>
+                <span class="tool-desc">— Execute & host</span>
+                <span class="pricing-label">Free or Core $20/mo</span>
+              </li>
+              <li>
+                <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="tool-link">ChatGPT</a>
+                <span class="tool-desc">— All thinking & specification</span>
+                <span class="pricing-label">Free</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="workflow-guide">
+          <div class="workflow-intro">
+            <h2>Before You Begin: Step 0</h2>
+            <p><strong>Important Context:</strong> You are not the developer of this project — you are <strong>User 0</strong>, developing an app to solve your own problem. You need to give ChatGPT the full context that you are a non-technical user who wants ChatGPT to ask you relevant questions to hone in on a development idea you can execute on Replit.</p>
+            <p>ChatGPT needs to ensure accuracy by asking you clarifying questions at every step, not by guessing or proposing solutions prematurely.</p>
+            <div class="step-prompt">
+              <strong>Step 0 — Confirm Constraints:</strong>
+              <code>"Confirm the global constraints listed above with me. Do not proceed until confirmed."</code>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-header">
+              <span class="step-number step-1">1</span>
+              <h3>Understand the User's Life</h3>
+            </div>
+            <p class="step-description">ChatGPT asks only these three questions to understand real-life context without jumping to solutions.</p>
+            <div class="step-prompt">
+              <strong>Exact prompt from master:</strong>
+              <code>Ask me ONLY these three questions:
+1. What do you do day-to-day?
+2. What part of that feels repetitive, annoying, or mentally draining?
+3. What do you constantly re-check, worry about, or feel unsure of?
+
+Wait for my answers.</code>
+              <strong>Questions ChatGPT will ask:</strong>
+              <ol>
+                <li>What do you do day-to-day?</li>
+                <li>What part of that feels repetitive, annoying, or mentally draining?</li>
+                <li>What do you constantly re-check, worry about, or feel unsure of?</li>
+              </ol>
+              <strong>Output:</strong> Raw human context. No solutions, no features.
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-header">
+              <span class="step-number step-2">2</span>
+              <h3>Translate Pain into Problems</h3>
+            </div>
+            <p class="step-description">Convert answers into 2-3 clear, concrete problems and explain them back in simple, non-technical language.</p>
+            <div class="step-prompt">
+              <strong>Exact prompt from master:</strong>
+              <code>Translate my answers into 2–3 clear, concrete problems.
+Explain them back to me in plain language.
+Ask me to confirm or correct them.
+Do NOT propose solutions.</code>
+              <strong>ChatGPT should:</strong>
+              <ul>
+                <li>Convert answers into 2-3 clear problems</li>
+                <li>Explain them back in simple language</li>
+                <li>Ask for confirmation or correction</li>
+                <li>NOT propose any solutions</li>
+              </ul>
+              <strong>Output:</strong> Confirmed problem statements.
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-header">
+              <span class="step-number step-3">3</span>
+              <h3>Validate Demand</h3>
+            </div>
+            <p class="step-description">Use web search or deep research to verify that other people experience the same problems.</p>
+            <div class="step-prompt">
+              <strong>Exact prompt from master:</strong>
+              <code>Use web search or deep research to verify that other people experience similar problems.
+Summarize findings in simple language.
+Explain why this is a real, recurring problem worth solving.
+Ask me if I want to proceed.</code>
+              <strong>Output:</strong> Validated problem worth solving.
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-header">
+              <span class="step-number step-4">4</span>
+              <h3>Lock Domain Language</h3>
+            </div>
+            <p class="step-description">Explicitly define key terms to prevent semantic ambiguity later.</p>
+            <div class="step-prompt">
+              <strong>Exact prompt from master:</strong>
+              <code>Explicitly define all key terms relevant to this domain.
+For each term:
+- What it means
+- What it does NOT mean
+- How it differs from related terms
+Ask me to confirm the vocabulary.
+No UI or features yet.</code>
+              <strong>ChatGPT defines:</strong>
+              <ul>
+                <li>Key terms used in the domain</li>
+                <li>What each term means</li>
+                <li>What each term does NOT mean</li>
+                <li>Which concepts must never overlap</li>
+              </ul>
+              <strong>Output:</strong> Approved domain vocabulary.
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-header">
+              <span class="step-number step-5">5</span>
+              <h3>Define Invariants & Illegal States</h3>
+            </div>
+            <p class="step-description">Lock the rules that define system truth and must never be violated.</p>
+            <div class="step-prompt">
+              <strong>Exact prompt from master:</strong>
+              <code>Ask questions to determine:
+- What values can only increase or decrease
+- What actions must never be allowed
+- What states are invalid
+- What actions change totals vs do not
+Do not proceed until these rules are confirmed.</code>
+              <strong>ChatGPT locks:</strong>
+              <ul>
+                <li>What values can only increase or decrease</li>
+                <li>What actions must never be allowed</li>
+                <li>What states are invalid</li>
+                <li>What affects totals vs what does not</li>
+              </ul>
+              <strong>Output:</strong> Confirmed invariant rules.
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-header">
+              <span class="step-number step-6">6</span>
+              <h3>Define State Mutation Rules</h3>
+            </div>
+            <p class="step-description">Explain in plain language what happens internally when each action occurs. No UI. No code.</p>
+            <div class="step-prompt">
+              <strong>Exact prompt from master:</strong>
+              <code>Ask questions to define:
+- What happens internally when each action occurs
+- How values change (direction and magnitude)
+- When changes apply (instant, scheduled, monthly)
+- Whether actions are reversible (undo)
+Summarize the full logic model and ask for confirmation.</code>
+              <strong>ChatGPT explains:</strong>
+              <ul>
+                <li>What happens internally when each action occurs</li>
+                <li>How values change</li>
+                <li>When changes apply (instant, monthly, scheduled)</li>
+                <li>Whether actions are reversible</li>
+              </ul>
+              <strong>Output:</strong> Approved logic model.
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-header">
+              <span class="step-number step-7">7</span>
+              <h3>Map Intent to UI</h3>
+            </div>
+            <p class="step-description">Map one user action to one intent. No overloaded controls. No mixed intent.</p>
+            <div class="step-prompt">
+              <strong>Exact prompt from master:</strong>
+              <code>Ask questions to map:
+- One user action → one intent
+- Which actions are drag-based
+- Which actions are button-based
+- Which actions must be separated to avoid confusion
+Produce a UI behavior summary and ask for approval.</code>
+              <strong>ChatGPT maps:</strong>
+              <ul>
+                <li>One user action → one intent</li>
+                <li>Buttons vs drag actions</li>
+                <li>Separate sections for separate concepts</li>
+                <li>Clear separation between different types of actions</li>
+              </ul>
+              <strong>Output:</strong> Final UI behavior specification.
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-header">
+              <span class="step-number step-8">8</span>
+              <h3>Logic Confirmation Gate</h3>
+            </div>
+            <p class="step-description">Before any code is generated, summarize the entire system and ask for explicit approval.</p>
+            <div class="step-prompt">
+              <strong>Exact prompt from master:</strong>
+              <code>Summarize the entire system:
+- Problem
+- Rules
+- Logic
+- UI behavior
+Ask for explicit approval to proceed.
+If rejected, return to the relevant step.</code>
+              <strong>ChatGPT must summarize:</strong>
+              <ul>
+                <li>Problem</li>
+                <li>Rules</li>
+                <li>Logic</li>
+                <li>UI behavior</li>
+              </ul>
+              <p>If rejected, return to the relevant step.</p>
+              <strong>Output:</strong> Final confirmation to build.
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-header">
+              <span class="step-number step-9">9</span>
+              <h3>Generate Final Build Prompt</h3>
+            </div>
+            <p class="step-description">ChatGPT produces ONE complete build prompt that encodes everything. This is the distilled result of the entire chat conversation.</p>
+            <div class="step-prompt">
+              <strong>Exact prompt from master:</strong>
+              <code>Generate ONE complete, Replit-ready build prompt that:
+- Encodes all clarified user needs
+- Encodes all rules, invariants, and illegal states
+- Encodes all UI behavior
+- Encodes all persistence requirements
+- Explicitly states what must NOT be included
+- Assumes Replit is only an executor, not a decision-maker
+
+The prompt must:
+- Contain no placeholders
+- Contain no future work
+- Contain no explanations after it
+
+OUTPUT ONLY THE FINAL BUILD PROMPT.</code>
+              <strong>The build prompt must:</strong>
+              <ul>
+                <li>Encode all clarified needs</li>
+                <li>Encode all rules and constraints</li>
+                <li>Encode all UI behavior</li>
+                <li>Encode all data persistence requirements</li>
+                <li>Explicitly state what must NOT be included</li>
+              </ul>
+              <p>No placeholders. No future work. No explanations after the prompt.</p>
+              <strong>Output:</strong> Single Replit-ready build prompt.
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Master Prompt View -->
+      <div id="prompt-view" class="content-view">
+        <section class="hero">
+          <h1>ChatGPT Master Prompt</h1>
+          <p class="lead">Copy this prompt to ChatGPT to start the structured conversation</p>
+        </section>
+
+        <section class="master-prompt-container">
+          <div class="prompt-box">
+            <button class="copy-icon-btn" onclick="copyPrompt()" title="Copy to clipboard">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+            <pre><code>You are my AI product guide and specification engine.
+
+Your job is to guide me through a structured conversation that results in ONE final, production-ready build prompt I can paste directly into Replit to build a working web app.
+
+IMPORTANT RULES:
+- Assume I am non-technical.
+- You must ask questions ONE STEP AT A TIME.
+- Do NOT jump ahead.
+- Do NOT propose features or solutions until explicitly allowed.
+- Do NOT generate any code until the very end.
+- Do NOT allow yourself to guess behavior.
+- All ambiguity must be resolved through questions.
+- Everything you reason about must be distilled into the final build prompt.
+- The final build prompt must leave NOTHING unspecified.
+
+GLOBAL CONSTRAINTS (ALWAYS ENFORCE):
+- Single-page application
+- Offline-capable
+- No APIs, no keys, no authentication
+- File-based data persistence (local storage or JSON files)
+- Minimal user input → automatic processing → clear output
+- Beginner-friendly UX
+- One final build prompt only
+
+PROCESS (YOU MUST FOLLOW THIS ORDER EXACTLY):
+
+────────────────────────
+STEP 0 — CONFIRM CONSTRAINTS
+────────────────────────
+Confirm the global constraints listed above with me.
+Do not proceed until confirmed.
+
+────────────────────────
+STEP 1 — UNDERSTAND MY LIFE
+────────────────────────
+Ask me ONLY these three questions:
+1. What do you do day-to-day?
+2. What part of that feels repetitive, annoying, or mentally draining?
+3. What do you constantly re-check, worry about, or feel unsure of?
+
+Wait for my answers.
+
+────────────────────────
+STEP 2 — TRANSLATE THE PAIN
+────────────────────────
+Translate my answers into 2–3 clear, concrete problems.
+Explain them back to me in plain language.
+Ask me to confirm or correct them.
+Do NOT propose solutions.
+
+────────────────────────
+STEP 3 — VALIDATE DEMAND
+────────────────────────
+Use web search or deep research to verify that other people experience similar problems.
+Summarize findings in simple language.
+Explain why this is a real, recurring problem worth solving.
+Ask me if I want to proceed.
+
+────────────────────────
+STEP 4 — LOCK DOMAIN LANGUAGE
+────────────────────────
+Explicitly define all key terms relevant to this domain.
+For each term:
+- What it means
+- What it does NOT mean
+- How it differs from related terms
+Ask me to confirm the vocabulary.
+No UI or features yet.
+
+────────────────────────
+STEP 5 — DEFINE INVARIANTS & ILLEGAL STATES
+────────────────────────
+Ask questions to determine:
+- What values can only increase or decrease
+- What actions must never be allowed
+- What states are invalid
+- What actions change totals vs do not
+Do not proceed until these rules are confirmed.
+
+────────────────────────
+STEP 6 — DEFINE STATE MUTATION RULES
+────────────────────────
+Ask questions to define:
+- What happens internally when each action occurs
+- How values change (direction and magnitude)
+- When changes apply (instant, scheduled, monthly)
+- Whether actions are reversible (undo)
+Summarize the full logic model and ask for confirmation.
+
+────────────────────────
+STEP 7 — MAP INTENT TO UI
+────────────────────────
+Ask questions to map:
+- One user action → one intent
+- Which actions are drag-based
+- Which actions are button-based
+- Which actions must be separated to avoid confusion
+Produce a UI behavior summary and ask for approval.
+
+────────────────────────
+STEP 8 — LOGIC CONFIRMATION GATE
+────────────────────────
+Summarize the entire system:
+- Problem
+- Rules
+- Logic
+- UI behavior
+Ask for explicit approval to proceed.
+If rejected, return to the relevant step.
+
+────────────────────────
+STEP 9 — GENERATE FINAL BUILD PROMPT
+────────────────────────
+Generate ONE complete, Replit-ready build prompt that:
+- Encodes all clarified user needs
+- Encodes all rules, invariants, and illegal states
+- Encodes all UI behavior
+- Encodes all persistence requirements
+- Explicitly states what must NOT be included
+- Assumes Replit is only an executor, not a decision-maker
+
+The prompt must:
+- Contain no placeholders
+- Contain no future work
+- Contain no explanations after it
+
+OUTPUT ONLY THE FINAL BUILD PROMPT.
+
+────────────────────────
+START NOW WITH STEP 0.</code></pre>
+          </div>
+        </section>
+      </div>
+
+      <!-- Demo View -->
+      <div id="demo-view" class="content-view">
+        <section class="demo-container">
+          <div class="device-mockups">
+            <!-- Desktop Mockup - Monitor Style -->
+            <div class="mockup desktop-mockup">
+              <div class="desktop-mockup-screen-wrapper">
+                <div class="mockup-header">
+                  <div class="browser-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                  </div>
+                  <div class="browser-url">demo.app</div>
+                </div>
+                <div class="mockup-screen">
+                  <iframe
+                    src="/demo/index.html"
+                    title="Demo Desktop View"
+                    frameborder="0"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+              <div class="monitor-stand"></div>
+            </div>
+
+            <!-- Phone Mockup -->
+            <div class="mockup phone-mockup">
+              <div class="phone-notch"></div>
+              <div class="mockup-screen">
+                <iframe
+                  src="/demo/index.html"
+                  title="Demo Mobile View"
+                  frameborder="0"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="phone-home-indicator"></div>
+            </div>
+          </div>
+
+          <div class="demo-instructions">
+            <h3>What you're seeing:</h3>
+            <p>This is the result of following the exact ChatGPT Master Prompt workflow shown in this presentation. Click inside either mockup to interact with the app and see how it responds on different screen sizes.</p>
+            <p class="demo-note">
+              <strong>Interactive Demo:</strong> Both views load the same app - the desktop shows the full experience while the mobile mockup demonstrates responsive design.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© CrazyForAI — Presenter Kristina Mladenova, CrazyLabs</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      // View toggle functionality
+      const toggleBtns = document.querySelectorAll('.toggle-btn');
+      const workflowView = document.getElementById('workflow-view');
+      const promptView = document.getElementById('prompt-view');
+      const demoView = document.getElementById('demo-view');
+
+      toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const view = btn.dataset.view;
+
+          toggleBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          workflowView.classList.remove('active');
+          promptView.classList.remove('active');
+          demoView.classList.remove('active');
+
+          if (view === 'workflow') {
+            workflowView.classList.add('active');
+          } else if (view === 'prompt') {
+            promptView.classList.add('active');
+          } else if (view === 'demo') {
+            demoView.classList.add('active');
+          }
+        });
+      });
+
+      // Copy prompt functionality
+      function copyPrompt() {
+        const promptText = document.querySelector('.prompt-box pre code').textContent;
+        const btn = document.querySelector('.copy-icon-btn');
+        navigator.clipboard.writeText(promptText).then(() => {
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      }
+    </script>
+  </body>
 </html>
