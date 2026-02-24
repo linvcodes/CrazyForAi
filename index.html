@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>CrazyForAI</title>
+    <title>CrazyForAI - AI-First Development</title>
     <meta name="theme-color" content="#0f1720">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,526 +11,523 @@
     <link rel="stylesheet" href="/src/styles.css">
   </head>
   <body>
-    <header class="site-header">
-      <div class="brand">
-        <a href="/" class="logo">CrazyForAI</a>
-      </div>
-    </header>
+    <div class="slides-container">
 
-    <div class="view-toggle">
-      <button class="toggle-btn active" data-view="workflow">AI Agent Workflow</button>
-      <button class="toggle-btn" data-view="prompt">ChatGPT Master Prompt</button>
-      <button class="toggle-btn" data-view="demo">Live Demo</button>
+      <!-- Slide 0: Title -->
+      <section class="slide title-slide" data-slide="1">
+        <div class="title-slide-inner">
+          <div class="title-eyebrow">CrazyForAI presents</div>
+          <h1 class="title-main">Building Software<br><span class="title-accent">Without Coding</span></h1>
+          <p class="title-sub">A full idea-to-launch demo using free tools</p>
+          <div class="title-divider"></div>
+          <div class="title-tools">
+            <span class="title-tool">ChatGPT</span>
+            <span class="title-sep">→</span>
+            <span class="title-tool">Replit</span>
+            <span class="title-sep">→</span>
+            <span class="title-tool">GitHub Pages</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 1: Kristina Introduction -->
+      <section class="slide" data-slide="2" style="background:transparent">
+        <div class="slide-header" style="min-height:80px"></div>
+        <div style="display:flex;align-items:center;justify-content:center;height:65vh;position:relative">
+          <img src="/assets/images/kristinamladenova.png" alt="Kristina Mladenova" style="max-width:100%;max-height:100%;object-fit:contain">
+          <div style="position:absolute;bottom:0;left:0;display:flex;gap:var(--space-sm);padding:var(--space-md)">
+            <div class="video-placeholder" style="width:180px;height:320px;aspect-ratio:9/16">
+              <div class="placeholder-icon">🎬</div>
+              <p style="margin:var(--space-sm) 0 0 0;font-size:var(--text-xs)">Video 1</p>
+            </div>
+            <div class="video-placeholder" style="width:180px;height:320px;aspect-ratio:9/16">
+              <div class="placeholder-icon">🎬</div>
+              <p style="margin:var(--space-sm) 0 0 0;font-size:var(--text-xs)">Video 2</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3: ChatGPT - Basic Path -->
+      <section class="slide" data-slide="3">
+        <div class="slide-header">
+          <span class="path-badge path-basic">Basic Path</span>
+          <h2>Step 1: Think with ChatGPT</h2>
+        </div>
+        <div class="slide-content">
+          <div style="display:flex;flex-direction:column;flex:1;min-height:0;gap:var(--space-md)">
+            <div style="display:flex;flex-direction:column;gap:var(--space-sm);flex-shrink:0">
+              <h3 style="margin:0;font-size:var(--text-lg);font-weight:600;color:var(--text)">Initial Prompt</h3>
+              <div class="prompt-box small">
+                <pre><code>I am a non-technical person learning how to vibe-code with Replit. I want to build a digital business card for myself.
+
+I will use this link on Instagram and LinkedIn in place of "linktree".
+
+I want it to have:
+- A photo of me
+- My name and job title
+- A link to my CV download button
+- Social links
+
+I want it to work on mobile and desktop.
+
+It's your job to ask me questions until we come down to the full prompt for Replit, with no room for misunderstanding.
+
+I also need help figuring out how to style it so it aligns with my personality and job position.</code></pre>
+              </div>
+            </div>
+            <div style="text-align:center;font-size:1.5rem;color:var(--accent);font-weight:700">↓</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);flex:1;min-height:0;overflow:hidden">
+              <div style="display:flex;flex-direction:column;gap:var(--space-sm);min-height:0">
+                <h3 style="margin:0;font-size:var(--text-lg);font-weight:600;color:var(--text);flex-shrink:0">Final Prompt</h3>
+                <div class="prompt-box" style="flex:1;overflow:auto;min-height:0">
+                  <pre><code>Build a single-page, mobile-first digital business card using static HTML + CSS + vanilla JS (no frameworks). It must work on mobile and desktop.
+
+Content (exact)
+
+Name: Kristina Mladenova
+
+Job title: Interactive Ads Expert
+
+Tagline (exact, keep styling as-is): — ᴡɪᴛʜ ʟᴏᴠᴇ & ᴄᴏꜰꜰᴇᴇ 🎈🧸
+
+Social links (icons only, no text):
+
+LinkedIn: https://www.linkedin.com/in/kmladenova/
+
+GitHub: https://github.com/live-codes/livecodes
+
+Each opens in a new tab with rel="noopener noreferrer"
+
+Main CTA button (big):
+
+Label: PORTFOLIO
+
+Link for now: https://www.google.com
+
+Opens in new tab with rel="noopener noreferrer"
+
+Layout requirements
+
+A vertical card centered on the page that feels like a “digital business card.”
+
+The card container must be ~90% of viewport height (min-height: 90vh) with margins around it so it never touches edges.
+
+Inside the card: photo at top, then name/title/tagline, then icon row, then big Portfolio button.
+
+Must be responsive and look good on both desktop and mobile without needing separate pages.
+
+Photo requirements
+
+Use an image placeholder file named profile.jpg in the project root.
+
+Display it as a rounded rectangle (not a circle), with a subtle neon outline or glow.
+
+If image is missing, show a nice placeholder block that still fits the design.
+
+Style requirements (cyberpunk, bold, CrazyLabs vibe)
+
+Background: black
+
+Primary neon accent: #dbfe01
+
+Text: white + neon accent
+
+Buttons:
+
+Default buttons are transparent black, neon outline, neon text, bold
+
+Portfolio button is a filled neon pill (background #dbfe01, text black), bold, slightly larger
+
+Use a bold, modern font stack (system fonts are fine) with strong typography.
+
+Add subtle grain/scanline feel (CSS-only overlay OK) but keep readable.
+
+ASCII watermark (behind the card)
+
+Place this ASCII art behind the card as a faint watermark, centered, low opacity, and not interfering with readability:
+
+  .---------.
+  |.-------.|
+  ||>run#  ||
+  ||       ||
+  |"-------'|etf
+.-^---------^-.
+| ---~   AMiGA|
+"-------------'
+
+
+It must look like a background layer and remain visible behind the card.
+
+Terminal-type animation + cursor indicator (core interaction)
+
+Implement a terminal boot-up typing animation on page load:
+
+The card content (name/title/tagline/buttons/icons) should appear as if it’s being “initialized.”
+
+Show a top small “terminal header area” inside the card (above the photo or overlayed neatly) that types:
+
+> booting profile...
+
+> loading links...
+
+> ready
+
+Use a blinking cursor block (e.g. █ or ▋) at the end while typing.
+
+After the boot sequence completes, the cursor can keep blinking and the UI stays interactive.
+
+The animation must not make the page unusable:
+
+Social icons and Portfolio button become clickable once “ready” appears.
+
+Optional but desired: a subtle “typing” sound is NOT required (do not add audio unless asked).
+
+Icons
+
+Use react-icons via CDN only if possible with static setup; otherwise use inline SVG icons that resemble LinkedIn and GitHub.
+
+The icons should be neon (#dbfe01) and slightly glow on hover.
+
+Icons have no text labels.
+
+Files to create
+
+Create exactly these files:
+
+index.html
+
+styles.css
+
+script.js
+
+(expects) profile.jpg (placeholder; don’t generate the image file, just reference it)
+
+Implementation notes
+
+No build step. Must run by opening index.html.
+
+Use clean semantic HTML.
+
+Use CSS for neon outlines/glows, button hover effects, scanlines overlay.
+
+Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code></pre>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:var(--space-sm);min-height:0">
+                <h3 style="margin:0;font-size:var(--text-lg);font-weight:600;color:var(--text);flex-shrink:0">UI Image Preview</h3>
+                <div style="flex:1;min-height:0;display:flex;gap:var(--space-sm);overflow:hidden">
+                  <div style="flex:1;display:flex;flex-direction:column;gap:4px;min-height:0;overflow:hidden">
+                    <p style="margin:0;font-size:var(--text-xs);color:var(--text-muted);flex-shrink:0">ChatGPT mockup</p>
+                    <img src="/assets/screenshots/UI MOCKUP.png" alt="UI Mockup" style="flex:1;width:100%;min-height:0;max-height:100%;object-fit:contain;object-position:top;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,0.1)">
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:4px;min-height:0;overflow:hidden">
+                    <p style="margin:0;font-size:var(--text-xs);color:var(--text-muted);flex-shrink:0">Profile picture (AI generated)</p>
+                    <img src="/assets/images/kristina m.png" alt="Kristina AI portrait" style="flex:1;width:100%;min-height:0;max-height:100%;object-fit:contain;object-position:top;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,0.1)">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 2: Replit Build - Basic Path -->
+      <section class="slide" data-slide="4">
+        <div class="slide-header">
+          <span class="path-badge path-basic">Basic Path</span>
+          <h2>Step 2: Build in Replit</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row">
+              <ol class="step-list horizontal">
+                <li>Paste your final prompt + profile picture + ui mockup from ChatGPT</li>
+                <li>Configure: Dev framework → HTML, CSS, JS → <strong>Remix</strong></li>
+                <li>Click Build</li>
+              </ol>
+            </div>
+            <div class="video-container">
+              <video class="slide-video" controls preload="metadata">
+                <source src="/assets/videos/replit build prompt.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3: Publish - Basic Path -->
+      <section class="slide" data-slide="5">
+        <div class="slide-header">
+          <span class="path-badge path-basic">Basic Path</span>
+          <h2>Step 3: Ship It</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row">
+              <div class="publish-steps horizontal">
+                <div class="publish-card">
+                  <h3>1. Deploy on Replit</h3>
+                  <p>Use Replit's free tier (1 free publish)</p>
+                  <p class="detail">Your site gets a live URL instantly</p>
+                </div>
+                <div class="publish-card">
+                  <h3>2. Add to Homescreen</h3>
+                  <p>On mobile: Share → Add to Home Screen</p>
+                  <p class="detail">Works like a PWA (no real PWA setup needed)</p>
+                </div>
+                <div class="publish-card">
+                  <h3>3. Share Your Link</h3>
+                  <p>Use on Instagram, LinkedIn instead of Linktree</p>
+                  <p class="detail">Your digital business card is live!</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-container">
+              <video class="slide-video" controls preload="metadata">
+                <source src="/assets/videos/publish.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Replit Corrections - Basic Path -->
+      <section class="slide" data-slide="6">
+        <div class="slide-header">
+          <span class="path-badge path-basic">Basic Path</span>
+          <h2>Step 2: Build in Replit (cont.)</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row">
+              <ol class="step-list horizontal" start="4">
+                <li>Make small corrections if needed</li>
+                <li>Done!</li>
+              </ol>
+            </div>
+            <div class="video-container">
+              <video class="slide-video" controls preload="metadata">
+                <source src="/assets/videos/pro hack to edit even though you hit replit credits.mov" type="video/quicktime">
+                <source src="/assets/videos/pro hack to edit even though you hit replit credits.mov" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6: GitHub Pages - Basic Path -->
+      <section class="slide" data-slide="7">
+        <div class="slide-header">
+          <span class="path-badge path-basic">Basic Path</span>
+          <h2>Free Hosting Forever: GitHub Pages</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row" style="flex-direction:column">
+              <p style="margin:0;font-size:var(--text-sm);color:var(--text-muted)">Don't want to pay for Replit hosting? Move your site to GitHub Pages — it's free, permanent, and takes 5 minutes.</p>
+              <ol class="step-list horizontal">
+                <li>Export your project from Replit</li>
+                <li>Push to a GitHub repository</li>
+                <li>Enable GitHub Pages in repo settings</li>
+                <li>Your site is live at <strong>username.github.io/repo</strong></li>
+              </ol>
+            </div>
+            <div class="video-container">
+              <video class="slide-video" controls preload="metadata">
+                <source src="/assets/videos/host with github pages.mov" type="video/quicktime">
+                <source src="/assets/videos/host with github pages.mov" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Transition to Advanced -->
+      <section class="slide slide-transition" data-slide="8">
+        <div class="slide-header" style="min-height:80px"></div>
+        <div class="slide-content">
+          <h2>For Advanced Users</h2>
+          <p class="lead">Want to build a real utility app that solves a problem?</p>
+          <p>Same workflow. Same 3 steps. <strong>One tiny change.</strong></p>
+          <div class="prompt-comparison">
+            <div class="prompt-before">
+              <div class="prompt-label">Before (Digital Business Card)</div>
+              <div class="prompt-box small">
+                <pre><code>I am a non-technical person learning how to vibe-code with Replit. I want to build a <mark class="highlight-old">digital business card</mark> for myself.
+
+<mark class="highlight-old">I will use this link on Instagram and LinkedIn in place of "linktree".
+
+I want it to have:
+- A photo of me
+- My name and job title
+- A link to my CV download button
+- Social links</mark>
+
+I want it to work on mobile and desktop.
+
+It's your job to ask me questions until we come down to the full prompt for Replit, with no room for misunderstanding.
+
+I also need help figuring out how to style it so it aligns with my personality and job position.</code></pre>
+              </div>
+            </div>
+            <div class="comparison-arrow">↓</div>
+            <div class="prompt-after">
+              <div class="prompt-label">After (Real Utility App)</div>
+              <div class="prompt-box small">
+                <pre><code>I am a non-technical person learning how to vibe-code with Replit. I want to build a <mark class="highlight-new">simple utility website that will help me do things faster. I am [job position], I do these things most often: [Your specific workflow details here]</mark>
+
+I want it to work on mobile and desktop.
+
+It's your job to ask me questions until we come down to the full prompt for Replit, with no room for misunderstanding.
+
+I also need help figuring out how to style it so it aligns with my personality and job position.</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6: ChatGPT - Advanced Path -->
+      <section class="slide" data-slide="9">
+        <div class="slide-header">
+          <span class="path-badge path-advanced">Advanced Path</span>
+          <h2>Step 1: Think with ChatGPT</h2>
+        </div>
+        <div class="slide-content">
+          <div style="display:flex;flex-direction:column;flex:1;min-height:0;gap:var(--space-md)">
+            <div style="display:flex;flex-direction:column;gap:var(--space-sm);flex-shrink:0">
+              <h3 style="margin:0;font-size:var(--text-lg);font-weight:600;color:var(--text)">Initial Prompt (Modified)</h3>
+              <div class="prompt-box small">
+                <pre><code>I am a non-technical person learning how to vibe-code with Replit. I want to build a financial tracking app to solve my budgeting problem.
+
+I struggle with keeping track of my expenses and income, and I never know if I'm on track with my budget.
+
+I want an app that helps me:
+- Track income and expenses
+- See my budget status
+- Understand where my money goes
+
+It's your job to ask me questions until we come down to the full prompt for Replit, with no room for misunderstanding.
+[my spreadsheet explanation of what I'm doing currently with excel]</code></pre>
+              </div>
+            </div>
+            <div style="text-align:center;font-size:1.5rem;color:var(--accent);font-weight:700">↓</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);flex:1;min-height:0">
+              <div style="display:flex;flex-direction:column;gap:var(--space-sm)">
+                <h3 style="margin:0;font-size:var(--text-lg);font-weight:600;color:var(--text)">Final Prompt</h3>
+                <div class="prompt-box" style="flex:1">
+                  <pre><code style="color:#999">[Complete, production-ready prompt will appear here after ChatGPT refinement]</code></pre>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:var(--space-sm)">
+                <h3 style="margin:0;font-size:var(--text-lg);font-weight:600;color:var(--text)">App Preview</h3>
+                <div class="video-placeholder" style="flex:1;min-height:250px">
+                  <div class="placeholder-icon">🖼️</div>
+                  <p style="margin:var(--space-sm) 0 0 0">App Design Preview</p>
+                  <p class="placeholder-note">ChatGPT generates app design mockup</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Replit Build - Advanced Path -->
+      <section class="slide" data-slide="10">
+        <div class="slide-header">
+          <span class="path-badge path-advanced">Advanced Path</span>
+          <h2>Step 2: Build in Replit</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row">
+              <ol class="step-list horizontal">
+                <li>Paste your final prompt from ChatGPT</li>
+                <li>Use defaults (React/Vite/Node/DB)</li>
+                <li>Click Build</li>
+                <li>Make small corrections if needed</li>
+                <li>Done!</li>
+              </ol>
+              <div class="note-box">
+                <strong>Note:</strong> For full apps, default stack works perfectly. Replit handles database, backend, and frontend automatically.
+              </div>
+            </div>
+            <div class="video-container">
+              <div class="video-placeholder">
+                <div class="placeholder-icon">🎬</div>
+                <p>Video: Building Full App in Replit</p>
+                <p class="placeholder-note">Shows: Paste prompt → Build with defaults → Done</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Publish - Advanced Path -->
+      <section class="slide" data-slide="11">
+        <div class="slide-header">
+          <span class="path-badge path-advanced">Advanced Path</span>
+          <h2>Step 3: Ship It</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row">
+              <div class="publish-steps horizontal">
+                <div class="publish-card">
+                  <h3>1. Deploy with Autoscale</h3>
+                  <p>Replit Core ($20/mo) for production apps</p>
+                  <p class="detail">Handles traffic spikes automatically</p>
+                </div>
+                <div class="publish-card">
+                  <h3>2. Add Custom Domain</h3>
+                  <p>Use Cloudflare for DNS + CDN</p>
+                  <p class="detail">Professional domain, faster loading</p>
+                </div>
+                <div class="publish-card">
+                  <h3>3. Monetization</h3>
+                  <p>Start with solving your own problem</p>
+                  <p class="detail">Real users → Feedback → Iterate → Scale</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-container">
+              <div class="video-placeholder">
+                <div class="placeholder-icon">🎬</div>
+                <p>Video: Deploying & Scaling Your App</p>
+                <p class="placeholder-note">Shows: Deploy with autoscale → Add custom domain → Monetization strategy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Closing -->
+      <section class="slide" data-slide="12">
+        <div class="slide-header" style="min-height:80px"></div>
+        <div style="display:flex;align-items:center;justify-content:center;height:65vh;position:relative">
+          <div style="position:absolute;top:80%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:10;color:white;max-width:90%">
+            <p style="font-size:5.5rem;font-weight:900;margin:0;text-shadow:0 8px 20px rgba(0,0,0,0.95);line-height:1">Questions?</p>
+            <p style="font-size:1.25rem;font-weight:900;margin:0.3rem 0 0 0;text-shadow:0 8px 20px rgba(0,0,0,0.95), 0 4px 10px rgba(0,0,0,0.9);line-height:1.2;letter-spacing:0.5px;white-space:nowrap">Do you have an app idea, and why haven't you built it yet?</p>
+          </div>
+          <img src="/assets/images/end.jpg" alt="End" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:var(--radius-lg);box-shadow:0 8px 32px rgba(0,0,0,0.3)">
+        </div>
+      </section>
+
     </div>
 
-    <main class="container">
-      <!-- Workflow View -->
-      <div id="workflow-view" class="content-view active">
-        <section class="hero">
-          <h1>Shipping Products Without Code</h1>
-          <p class="lead">A thinking-first, execution-second workflow for building production-ready web apps using AI</p>
-          <div class="tools-used">
-            <strong>Used:</strong>
-            <ul class="tool-list">
-              <li>
-                <a href="https://replit.com" target="_blank" rel="noopener noreferrer" class="tool-link">Replit</a>
-                <span class="tool-desc">— Execute & host</span>
-                <span class="pricing-label">Free or Core $20/mo</span>
-              </li>
-              <li>
-                <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="tool-link">ChatGPT</a>
-                <span class="tool-desc">— All thinking & specification</span>
-                <span class="pricing-label">Free</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section class="workflow-guide">
-          <div class="workflow-intro">
-            <h2>Before You Begin: Step 0</h2>
-            <p><strong>Important Context:</strong> You are not the developer of this project — you are <strong>User 0</strong>, developing an app to solve your own problem. You need to give ChatGPT the full context that you are a non-technical user who wants ChatGPT to ask you relevant questions to hone in on a development idea you can execute on Replit.</p>
-            <p>ChatGPT needs to ensure accuracy by asking you clarifying questions at every step, not by guessing or proposing solutions prematurely.</p>
-            <div class="step-prompt">
-              <strong>Step 0 — Confirm Constraints:</strong>
-              <code>"Confirm the global constraints listed above with me. Do not proceed until confirmed."</code>
-            </div>
-          </div>
-
-          <div class="guide-step">
-            <div class="step-header">
-              <span class="step-number step-1">1</span>
-              <h3>Understand the User's Life</h3>
-            </div>
-            <p class="step-description">ChatGPT asks only these three questions to understand real-life context without jumping to solutions.</p>
-            <div class="step-prompt">
-              <strong>Exact prompt from master:</strong>
-              <code>Ask me ONLY these three questions:
-1. What do you do day-to-day?
-2. What part of that feels repetitive, annoying, or mentally draining?
-3. What do you constantly re-check, worry about, or feel unsure of?
-
-Wait for my answers.</code>
-              <strong>Questions ChatGPT will ask:</strong>
-              <ol>
-                <li>What do you do day-to-day?</li>
-                <li>What part of that feels repetitive, annoying, or mentally draining?</li>
-                <li>What do you constantly re-check, worry about, or feel unsure of?</li>
-              </ol>
-              <strong>Output:</strong> Raw human context. No solutions, no features.
-            </div>
-          </div>
-
-          <div class="guide-step">
-            <div class="step-header">
-              <span class="step-number step-2">2</span>
-              <h3>Translate Pain into Problems</h3>
-            </div>
-            <p class="step-description">Convert answers into 2-3 clear, concrete problems and explain them back in simple, non-technical language.</p>
-            <div class="step-prompt">
-              <strong>Exact prompt from master:</strong>
-              <code>Translate my answers into 2–3 clear, concrete problems.
-Explain them back to me in plain language.
-Ask me to confirm or correct them.
-Do NOT propose solutions.</code>
-              <strong>ChatGPT should:</strong>
-              <ul>
-                <li>Convert answers into 2-3 clear problems</li>
-                <li>Explain them back in simple language</li>
-                <li>Ask for confirmation or correction</li>
-                <li>NOT propose any solutions</li>
-              </ul>
-              <strong>Output:</strong> Confirmed problem statements.
-            </div>
-          </div>
-
-          <div class="guide-step">
-            <div class="step-header">
-              <span class="step-number step-3">3</span>
-              <h3>Validate Demand</h3>
-            </div>
-            <p class="step-description">Use web search or deep research to verify that other people experience the same problems.</p>
-            <div class="step-prompt">
-              <strong>Exact prompt from master:</strong>
-              <code>Use web search or deep research to verify that other people experience similar problems.
-Summarize findings in simple language.
-Explain why this is a real, recurring problem worth solving.
-Ask me if I want to proceed.</code>
-              <strong>Output:</strong> Validated problem worth solving.
-            </div>
-          </div>
-
-          <div class="guide-step">
-            <div class="step-header">
-              <span class="step-number step-4">4</span>
-              <h3>Lock Domain Language</h3>
-            </div>
-            <p class="step-description">Explicitly define key terms to prevent semantic ambiguity later.</p>
-            <div class="step-prompt">
-              <strong>Exact prompt from master:</strong>
-              <code>Explicitly define all key terms relevant to this domain.
-For each term:
-- What it means
-- What it does NOT mean
-- How it differs from related terms
-Ask me to confirm the vocabulary.
-No UI or features yet.</code>
-              <strong>ChatGPT defines:</strong>
-              <ul>
-                <li>Key terms used in the domain</li>
-                <li>What each term means</li>
-                <li>What each term does NOT mean</li>
-                <li>Which concepts must never overlap</li>
-              </ul>
-              <strong>Output:</strong> Approved domain vocabulary.
-            </div>
-          </div>
-
-          <div class="guide-step">
-            <div class="step-header">
-              <span class="step-number step-5">5</span>
-              <h3>Define Invariants & Illegal States</h3>
-            </div>
-            <p class="step-description">Lock the rules that define system truth and must never be violated.</p>
-            <div class="step-prompt">
-              <strong>Exact prompt from master:</strong>
-              <code>Ask questions to determine:
-- What values can only increase or decrease
-- What actions must never be allowed
-- What states are invalid
-- What actions change totals vs do not
-Do not proceed until these rules are confirmed.</code>
-              <strong>ChatGPT locks:</strong>
-              <ul>
-                <li>What values can only increase or decrease</li>
-                <li>What actions must never be allowed</li>
-                <li>What states are invalid</li>
-                <li>What affects totals vs what does not</li>
-              </ul>
-              <strong>Output:</strong> Confirmed invariant rules.
-            </div>
-          </div>
-
-          <div class="guide-step">
-            <div class="step-header">
-              <span class="step-number step-6">6</span>
-              <h3>Define State Mutation Rules</h3>
-            </div>
-            <p class="step-description">Explain in plain language what happens internally when each action occurs. No UI. No code.</p>
-            <div class="step-prompt">
-              <strong>Exact prompt from master:</strong>
-              <code>Ask questions to define:
-- What happens internally when each action occurs
-- How values change (direction and magnitude)
-- When changes apply (instant, scheduled, monthly)
-- Whether actions are reversible (undo)
-Summarize the full logic model and ask for confirmation.</code>
-              <strong>ChatGPT explains:</strong>
-              <ul>
-                <li>What happens internally when each action occurs</li>
-                <li>How values change</li>
-                <li>When changes apply (instant, monthly, scheduled)</li>
-                <li>Whether actions are reversible</li>
-              </ul>
-              <strong>Output:</strong> Approved logic model.
-            </div>
-          </div>
-
-          <div class="guide-step">
-            <div class="step-header">
-              <span class="step-number step-7">7</span>
-              <h3>Map Intent to UI</h3>
-            </div>
-            <p class="step-description">Map one user action to one intent. No overloaded controls. No mixed intent.</p>
-            <div class="step-prompt">
-              <strong>Exact prompt from master:</strong>
-              <code>Ask questions to map:
-- One user action → one intent
-- Which actions are drag-based
-- Which actions are button-based
-- Which actions must be separated to avoid confusion
-Produce a UI behavior summary and ask for approval.</code>
-              <strong>ChatGPT maps:</strong>
-              <ul>
-                <li>One user action → one intent</li>
-                <li>Buttons vs drag actions</li>
-                <li>Separate sections for separate concepts</li>
-                <li>Clear separation between different types of actions</li>
-              </ul>
-              <strong>Output:</strong> Final UI behavior specification.
-            </div>
-          </div>
-
-          <div class="guide-step">
-            <div class="step-header">
-              <span class="step-number step-8">8</span>
-              <h3>Logic Confirmation Gate</h3>
-            </div>
-            <p class="step-description">Before any code is generated, summarize the entire system and ask for explicit approval.</p>
-            <div class="step-prompt">
-              <strong>Exact prompt from master:</strong>
-              <code>Summarize the entire system:
-- Problem
-- Rules
-- Logic
-- UI behavior
-Ask for explicit approval to proceed.
-If rejected, return to the relevant step.</code>
-              <strong>ChatGPT must summarize:</strong>
-              <ul>
-                <li>Problem</li>
-                <li>Rules</li>
-                <li>Logic</li>
-                <li>UI behavior</li>
-              </ul>
-              <p>If rejected, return to the relevant step.</p>
-              <strong>Output:</strong> Final confirmation to build.
-            </div>
-          </div>
-
-          <div class="guide-step">
-            <div class="step-header">
-              <span class="step-number step-9">9</span>
-              <h3>Generate Final Build Prompt</h3>
-            </div>
-            <p class="step-description">ChatGPT produces ONE complete build prompt that encodes everything. This is the distilled result of the entire chat conversation.</p>
-            <div class="step-prompt">
-              <strong>Exact prompt from master:</strong>
-              <code>Generate ONE complete, Replit-ready build prompt that:
-- Encodes all clarified user needs
-- Encodes all rules, invariants, and illegal states
-- Encodes all UI behavior
-- Encodes all persistence requirements
-- Explicitly states what must NOT be included
-- Assumes Replit is only an executor, not a decision-maker
-
-The prompt must:
-- Contain no placeholders
-- Contain no future work
-- Contain no explanations after it
-
-OUTPUT ONLY THE FINAL BUILD PROMPT.</code>
-              <strong>The build prompt must:</strong>
-              <ul>
-                <li>Encode all clarified needs</li>
-                <li>Encode all rules and constraints</li>
-                <li>Encode all UI behavior</li>
-                <li>Encode all data persistence requirements</li>
-                <li>Explicitly state what must NOT be included</li>
-              </ul>
-              <p>No placeholders. No future work. No explanations after the prompt.</p>
-              <strong>Output:</strong> Single Replit-ready build prompt.
-            </div>
-          </div>
-        </section>
+    <!-- Navigation -->
+    <div class="slide-nav">
+      <button class="nav-arrow nav-prev" onclick="prevSlide()" aria-label="Previous slide">‹</button>
+      <div class="slide-progress">
+        <span class="current-slide">1</span> / <span class="total-slides">11</span>
       </div>
+      <button class="nav-arrow nav-next" onclick="nextSlide()" aria-label="Next slide">›</button>
+    </div>
 
-      <!-- Master Prompt View -->
-      <div id="prompt-view" class="content-view">
-        <section class="hero">
-          <h1>ChatGPT Master Prompt</h1>
-          <p class="lead">Copy this prompt to ChatGPT to start the structured conversation</p>
-        </section>
-
-        <section class="master-prompt-container">
-          <div class="prompt-box">
-            <button class="copy-icon-btn" onclick="copyPrompt()" title="Copy to clipboard">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-            </button>
-            <pre><code>You are my AI product guide and specification engine.
-
-Your job is to guide me through a structured conversation that results in ONE final, production-ready build prompt I can paste directly into Replit to build a working web app.
-
-IMPORTANT RULES:
-- Assume I am non-technical.
-- You must ask questions ONE STEP AT A TIME.
-- Do NOT jump ahead.
-- Do NOT propose features or solutions until explicitly allowed.
-- Do NOT generate any code until the very end.
-- Do NOT allow yourself to guess behavior.
-- All ambiguity must be resolved through questions.
-- Everything you reason about must be distilled into the final build prompt.
-- The final build prompt must leave NOTHING unspecified.
-
-GLOBAL CONSTRAINTS (ALWAYS ENFORCE):
-- Single-page application
-- Offline-capable
-- No APIs, no keys, no authentication
-- File-based data persistence (local storage or JSON files)
-- Minimal user input → automatic processing → clear output
-- Beginner-friendly UX
-- One final build prompt only
-
-PROCESS (YOU MUST FOLLOW THIS ORDER EXACTLY):
-
-────────────────────────
-STEP 0 — CONFIRM CONSTRAINTS
-────────────────────────
-Confirm the global constraints listed above with me.
-Do not proceed until confirmed.
-
-────────────────────────
-STEP 1 — UNDERSTAND MY LIFE
-────────────────────────
-Ask me ONLY these three questions:
-1. What do you do day-to-day?
-2. What part of that feels repetitive, annoying, or mentally draining?
-3. What do you constantly re-check, worry about, or feel unsure of?
-
-Wait for my answers.
-
-────────────────────────
-STEP 2 — TRANSLATE THE PAIN
-────────────────────────
-Translate my answers into 2–3 clear, concrete problems.
-Explain them back to me in plain language.
-Ask me to confirm or correct them.
-Do NOT propose solutions.
-
-────────────────────────
-STEP 3 — VALIDATE DEMAND
-────────────────────────
-Use web search or deep research to verify that other people experience similar problems.
-Summarize findings in simple language.
-Explain why this is a real, recurring problem worth solving.
-Ask me if I want to proceed.
-
-────────────────────────
-STEP 4 — LOCK DOMAIN LANGUAGE
-────────────────────────
-Explicitly define all key terms relevant to this domain.
-For each term:
-- What it means
-- What it does NOT mean
-- How it differs from related terms
-Ask me to confirm the vocabulary.
-No UI or features yet.
-
-────────────────────────
-STEP 5 — DEFINE INVARIANTS & ILLEGAL STATES
-────────────────────────
-Ask questions to determine:
-- What values can only increase or decrease
-- What actions must never be allowed
-- What states are invalid
-- What actions change totals vs do not
-Do not proceed until these rules are confirmed.
-
-────────────────────────
-STEP 6 — DEFINE STATE MUTATION RULES
-────────────────────────
-Ask questions to define:
-- What happens internally when each action occurs
-- How values change (direction and magnitude)
-- When changes apply (instant, scheduled, monthly)
-- Whether actions are reversible (undo)
-Summarize the full logic model and ask for confirmation.
-
-────────────────────────
-STEP 7 — MAP INTENT TO UI
-────────────────────────
-Ask questions to map:
-- One user action → one intent
-- Which actions are drag-based
-- Which actions are button-based
-- Which actions must be separated to avoid confusion
-Produce a UI behavior summary and ask for approval.
-
-────────────────────────
-STEP 8 — LOGIC CONFIRMATION GATE
-────────────────────────
-Summarize the entire system:
-- Problem
-- Rules
-- Logic
-- UI behavior
-Ask for explicit approval to proceed.
-If rejected, return to the relevant step.
-
-────────────────────────
-STEP 9 — GENERATE FINAL BUILD PROMPT
-────────────────────────
-Generate ONE complete, Replit-ready build prompt that:
-- Encodes all clarified user needs
-- Encodes all rules, invariants, and illegal states
-- Encodes all UI behavior
-- Encodes all persistence requirements
-- Explicitly states what must NOT be included
-- Assumes Replit is only an executor, not a decision-maker
-
-The prompt must:
-- Contain no placeholders
-- Contain no future work
-- Contain no explanations after it
-
-OUTPUT ONLY THE FINAL BUILD PROMPT.
-
-────────────────────────
-START NOW WITH STEP 0.</code></pre>
-          </div>
-        </section>
-      </div>
-
-      <!-- Demo View -->
-      <div id="demo-view" class="content-view">
-        <section class="demo-container">
-          <div class="device-mockups">
-            <!-- Desktop Mockup - Monitor Style -->
-            <div class="mockup desktop-mockup">
-              <div class="desktop-mockup-screen-wrapper">
-                <div class="mockup-header">
-                  <div class="browser-dots">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                  </div>
-                  <div class="browser-url">demo.app</div>
-                </div>
-                <div class="mockup-screen">
-                  <iframe
-                    src="/demo/index.html"
-                    title="Demo Desktop View"
-                    frameborder="0"
-                    allowfullscreen>
-                  </iframe>
-                </div>
-              </div>
-              <div class="monitor-stand"></div>
-            </div>
-
-            <!-- Phone Mockup -->
-            <div class="mockup phone-mockup">
-              <div class="phone-notch"></div>
-              <div class="mockup-screen">
-                <iframe
-                  src="/demo/index.html"
-                  title="Demo Mobile View"
-                  frameborder="0"
-                  allowfullscreen>
-                </iframe>
-              </div>
-              <div class="phone-home-indicator"></div>
-            </div>
-          </div>
-
-          <div class="demo-instructions">
-            <h3>What you're seeing:</h3>
-            <p>This is the result of following the exact ChatGPT Master Prompt workflow shown in this presentation. Click inside either mockup to interact with the app and see how it responds on different screen sizes.</p>
-            <p class="demo-note">
-              <strong>Interactive Demo:</strong> Both views load the same app - the desktop shows the full experience while the mobile mockup demonstrates responsive design.
-            </p>
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <footer class="site-footer">
-      <p>© CrazyForAI — Presenter Kristina Mladenova, CrazyLabs</p>
-    </footer>
+    <!-- Progress Dots -->
+    <div class="progress-dots"></div>
 
     <script type="module" src="/src/main.js"></script>
-    <script>
-      // View toggle functionality
-      const toggleBtns = document.querySelectorAll('.toggle-btn');
-      const workflowView = document.getElementById('workflow-view');
-      const promptView = document.getElementById('prompt-view');
-      const demoView = document.getElementById('demo-view');
-
-      toggleBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const view = btn.dataset.view;
-
-          toggleBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          workflowView.classList.remove('active');
-          promptView.classList.remove('active');
-          demoView.classList.remove('active');
-
-          if (view === 'workflow') {
-            workflowView.classList.add('active');
-          } else if (view === 'prompt') {
-            promptView.classList.add('active');
-          } else if (view === 'demo') {
-            demoView.classList.add('active');
-          }
-        });
-      });
-
-      // Copy prompt functionality
-      function copyPrompt() {
-        const promptText = document.querySelector('.prompt-box pre code').textContent;
-        const btn = document.querySelector('.copy-icon-btn');
-        navigator.clipboard.writeText(promptText).then(() => {
-          btn.classList.add('copied');
-          setTimeout(() => {
-            btn.classList.remove('copied');
-          }, 2000);
-        });
-      }
-    </script>
   </body>
 </html>
