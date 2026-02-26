@@ -1,31 +1,29 @@
 // Horizontal Slide Navigation
 let currentSlide = 0;
-const totalSlides = 12;
 const slidesContainer = document.querySelector('.slides-container');
-const currentSlideEl = document.querySelector('.current-slide');
-const totalSlidesEl = document.querySelector('.total-slides');
 const prevBtn = document.querySelector('.nav-prev');
 const nextBtn = document.querySelector('.nav-next');
 const progressDotsContainer = document.querySelector('.progress-dots');
 
+// Derive slide count from the DOM so adding/removing <section class="slide"> is all you need
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-  // Set total slides
-  totalSlidesEl.textContent = totalSlides;
-
-  // Create progress dots
-  for (let i = 0; i < totalSlides; i++) {
+  // Create one progress dot per slide
+  slides.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.classList.add('progress-dot');
     if (i === 0) dot.classList.add('active');
     dot.addEventListener('click', () => goToSlide(i));
     progressDotsContainer.appendChild(dot);
-  }
+  });
 
   // Initial state
   updateNavigation();
 
-  console.log('CrazyForAI — Slide deck ready');
+  console.log('CrazyForAI — Slide deck ready (' + totalSlides + ' slides)');
 });
 
 // Navigation functions
@@ -56,7 +54,6 @@ function updateSlides() {
   slidesContainer.style.transform = `translateX(${offset}%)`;
 
   // Update UI
-  currentSlideEl.textContent = currentSlide + 1;
   updateNavigation();
   updateProgressDots();
 }
