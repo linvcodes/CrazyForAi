@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CrazyForAI - Building Software Without Coding</title>
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script type="module" crossorigin src="./assets/index-D7QKheJ1.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BkUHwVIw.css">
+  </head>
+  <body>
+    <div class="slides-container">
+
+      <!-- ═══════════════════════════════════════════
+           INTRO SECTION
+           ═══════════════════════════════════════════ -->
+
+      <!-- Slide 1: Title -->
+      <section class="slide" data-slide="1">
+        <div class="slide-header header-compact">
+          <div class="slide-eyebrow">CrazyForAI presents</div>
+        </div>
+        <div class="slide-content slide-content--center">
+          <div class="title-card-inner">
+            <h1 class="title-main">Building Software<br><span class="title-accent">Without Coding</span></h1>
+            <p class="title-sub">A full idea-to-launch demo using free tools</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 2: Speaker Intro -->
+      <section class="slide" data-slide="2">
+        <div class="slide-content slide-content--center">
+          <div class="speaker-layout">
+            <div class="speaker-image-col">
+              <img src="./assets/images/kristinamladenova.png" alt="Kristina Mladenova" class="speaker-image">
+            </div>
+            <div class="speaker-info-col">
+              <h2 class="speaker-name">Kristina Mladenova</h2>
+              <p class="speaker-title">Interactive Ads Expert · CrazyLabs</p>
+              <p class="speaker-bio">I build playable ads and internal tools — all with AI.</p>
+              <div class="speaker-videos">
+                <div class="speaker-video-item">
+                  <video src="./assets/videos/playable0.mov" autoplay loop muted playsinline></video>
+                </div>
+                <div class="speaker-video-item">
+                  <video src="./assets/videos/playable1.mov" autoplay loop muted playsinline></video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: What We'll Cover Today -->
+      <section class="slide">
+        <div class="slide-header">
+          <h2>Agenda</h2>
+        </div>
+        <div class="slide-content slide-content--center">
+          <div class="agenda-blocks">
+            <div class="agenda-block agenda-block--theory">
+              <div class="agenda-block-num">01</div>
+              <iconify-icon icon="ri:book-open-line" class="agenda-block-icon"></iconify-icon>
+              <div class="agenda-block-title">Theory of Software<br>as a Product</div>
+            </div>
+            <div class="agenda-block-arrow">→</div>
+            <div class="agenda-block agenda-block--practical">
+              <div class="agenda-block-num">02</div>
+              <iconify-icon icon="ri:tools-line" class="agenda-block-icon"></iconify-icon>
+              <div class="agenda-block-title">Practical Building</div>
+            </div>
+            <div class="agenda-block-arrow">→</div>
+            <div class="agenda-block agenda-block--hacker">
+              <div class="agenda-block-num">03</div>
+              <div class="agenda-block-badge">Bonus</div>
+              <div class="agenda-block-title">Hacker Mode</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: Manual dev vs AI side by side -->
+      <section class="slide">
+        <div class="slide-header">
+          <h2>The old way vs AI</h2>
+        </div>
+        <div class="slide-content slide-content--split">
+          <!-- LEFT: Manual dev -->
+          <div class="split-pane split-pane--old">
+            <div class="split-pane-label"><iconify-icon icon="ri:code-s-slash-line"></iconify-icon> Manual dev</div>
+            <div class="tree-flow tree-flow--compact">
+              <div class="tree-row">
+                <div class="ai-adv-item tree-node tree-node--root">
+                  <div class="ai-adv-icon"><iconify-icon icon="ri:lightbulb-flash-line"></iconify-icon></div>
+                  <div class="ai-adv-text"><strong>Brilliant idea</strong></div>
+                </div>
+              </div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-label">Make a decision</div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-split">
+                <div class="tree-split-col">
+                  <div class="tree-drop"><div class="tree-drop-dot"></div><div class="tree-drop-line"></div></div>
+                  <div class="ai-adv-item tree-node">
+                    <div class="ai-adv-icon"><iconify-icon icon="ri:money-dollar-circle-line"></iconify-icon></div>
+                    <div class="ai-adv-text">
+                      <strong>Hire a dev</strong>
+                      <span>$1k–$5k+/mo</span>
+                    </div>
+                  </div>
+                  <div class="pc-table">
+                    <div class="pc-rows">
+                      <div class="pc-row pc-pro">✓ Business focus</div>
+                      <div class="pc-row pc-con">✗ Expensive</div>
+                      <div class="pc-row pc-pro"></div>
+                      <div class="pc-row pc-con">✗ Slow back-and-forth</div>
+                    </div>
+                    <div class="pc-stats">
+                      <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:money-bag"></iconify-icon> Money</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--high pc-bar--accent"></div></div></div>
+                      <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:hourglass-not-done"></iconify-icon> Time</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--med pc-bar--accent"></div></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-split-col">
+                  <div class="tree-drop"><div class="tree-drop-dot"></div><div class="tree-drop-line"></div></div>
+                  <div class="ai-adv-item tree-node">
+                    <div class="ai-adv-icon"><iconify-icon icon="ri:book-open-line"></iconify-icon></div>
+                    <div class="ai-adv-text">
+                      <strong>Learn yourself</strong>
+                      <span>$0–$200k · years</span>
+                    </div>
+                  </div>
+                  <div class="pc-table">
+                    <div class="pc-rows">
+                      <div class="pc-row pc-pro">✓ Full control</div>
+                      <div class="pc-row pc-con">✗ Years to ship</div>
+                      <div class="pc-row pc-pro">✓ Lifelong skill</div>
+                      <div class="pc-row pc-con"></div>
+                    </div>
+                    <div class="pc-stats">
+                      <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:hourglass-not-done"></iconify-icon> Time</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--high pc-bar--accent"></div></div></div>
+                      <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:high-voltage"></iconify-icon> Energy</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--high pc-bar--accent"></div></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-timeline">
+                <div class="tree-timeline-row">
+                  <span class="tree-timeline-label">MVP</span>
+                  <span class="tree-timeline-time"><iconify-icon icon="noto:hourglass-not-done"></iconify-icon> 3–6 mo</span>
+                  <span class="tree-timeline-cost"><iconify-icon icon="noto:money-bag"></iconify-icon> $3k–$30k</span>
+                </div>
+                <div class="tree-timeline-row">
+                  <span class="tree-timeline-label">Full</span>
+                  <span class="tree-timeline-time"><iconify-icon icon="noto:hourglass-not-done"></iconify-icon> 1–2 yr</span>
+                  <span class="tree-timeline-cost"><iconify-icon icon="noto:money-bag"></iconify-icon> $12k–$120k</span>
+                </div>
+                <div class="tree-timeline-extras">+ hosting, domain, security, infra on top</div>
+              </div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-label">Possible outcomes</div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-split">
+                <div class="tree-split-col">
+                  <div class="tree-drop"><div class="tree-drop-dot"></div><div class="tree-drop-line"></div></div>
+                  <div class="ai-adv-item tree-node">
+                    <div class="ai-adv-icon"><iconify-icon icon="ri:arrow-down-line"></iconify-icon></div>
+                    <div class="ai-adv-text"><strong>Failed to scale</strong></div>
+                  </div>
+                </div>
+                <div class="tree-split-col">
+                  <div class="tree-drop"><div class="tree-drop-dot"></div><div class="tree-drop-line"></div></div>
+                  <div class="ai-adv-item tree-node">
+                    <div class="ai-adv-icon"><iconify-icon icon="ri:trophy-line"></iconify-icon></div>
+                    <div class="ai-adv-text"><strong>Scaled (rare)</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="split-divider"><span>VS</span></div>
+
+          <!-- RIGHT: AI -->
+          <div class="split-pane split-pane--ai">
+            <div class="split-pane-label"><iconify-icon icon="ri:robot-2-line"></iconify-icon> Ideal AI-assisted</div>
+            <div class="tree-flow tree-flow--compact">
+              <div class="tree-row">
+                <div class="ai-adv-item tree-node tree-node--root">
+                  <div class="ai-adv-icon"><iconify-icon icon="ri:lightbulb-flash-line"></iconify-icon></div>
+                  <div class="ai-adv-text"><strong>Brilliant idea</strong></div>
+                </div>
+              </div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-label">Choose your AI tool</div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-split tree-split--three">
+                <div class="tree-split-col">
+                  <div class="tree-drop"><div class="tree-drop-dot"></div><div class="tree-drop-line"></div></div>
+                  <div class="ai-adv-item tree-node">
+                    <span class="tool-level-badge tool-level--beginner"><iconify-icon icon="noto:hot-pepper"></iconify-icon></span>
+                    <div class="ai-adv-icon"><iconify-icon icon="simple-icons:replit"></iconify-icon></div>
+                    <div class="ai-adv-text">
+                      <strong>Replit</strong>
+                      <span>$0–$20/mo</span>
+                    </div>
+                  </div>
+                  <div class="replit-hosting-note">✓ Hosting &amp; domain included</div>
+                </div>
+                <div class="tree-split-col">
+                  <div class="tree-drop"><div class="tree-drop-dot"></div><div class="tree-drop-line"></div></div>
+                  <div class="ai-adv-item tree-node">
+                    <span class="tool-level-badge tool-level--intermediate"><iconify-icon icon="noto:hot-pepper"></iconify-icon><iconify-icon icon="noto:hot-pepper"></iconify-icon></span>
+                    <div class="ai-adv-icon"><iconify-icon icon="simple-icons:cursor"></iconify-icon></div>
+                    <div class="ai-adv-text">
+                      <strong>Cursor</strong>
+                      <span>$0–$20/mo</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-split-col">
+                  <div class="tree-drop"><div class="tree-drop-dot"></div><div class="tree-drop-line"></div></div>
+                  <div class="ai-adv-item tree-node">
+                    <span class="tool-level-badge tool-level--hacker"><iconify-icon icon="noto:hot-pepper"></iconify-icon><iconify-icon icon="noto:hot-pepper"></iconify-icon><iconify-icon icon="noto:hot-pepper"></iconify-icon></span>
+                    <div class="ai-adv-icon"><iconify-icon icon="simple-icons:anthropic"></iconify-icon></div>
+                    <div class="ai-adv-text">
+                      <strong>Claude</strong>
+                      <span>$0–$20/mo</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-timeline tree-timeline--accent">
+                <div class="tree-timeline-row">
+                  <span class="tree-timeline-label">MVP</span>
+                  <span class="tree-timeline-time"><iconify-icon icon="noto:hourglass-not-done"></iconify-icon> hours–1 day</span>
+                  <span class="tree-timeline-cost"><iconify-icon icon="noto:money-bag"></iconify-icon> $0–$20</span>
+                </div>
+                <div class="tree-timeline-row">
+                  <span class="tree-timeline-label">Full</span>
+                  <span class="tree-timeline-time"><iconify-icon icon="noto:hourglass-not-done"></iconify-icon> 4–6 mo</span>
+                  <span class="tree-timeline-cost"><iconify-icon icon="noto:money-bag"></iconify-icon> $80–$120</span>
+                </div>
+              </div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-label">Possible outcomes</div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-split tree-split--no-bar">
+                <div class="tree-split-col">
+                  <div class="tree-drop"><div class="tree-drop-dot"></div><div class="tree-drop-line"></div></div>
+                  <div class="ai-adv-item tree-node">
+                    <div class="ai-adv-icon"><iconify-icon icon="ri:trophy-line"></iconify-icon></div>
+                    <div class="ai-adv-text"><strong>Guaranteed</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="split-badges-footer">
+            <span class="saving-badge">MVP 99% cheaper</span>
+            <span class="saving-badge saving-badge--time">99% faster</span>
+            <span class="saving-badge">Full product 99% cheaper</span>
+            <span class="saving-badge saving-badge--time">70% less time</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Slide: Become User 0 -->
+      <section class="slide slide--users" data-slide="5">
+        <div class="slide-content slide-content--users" id="users-content">
+          <img src="./assets/images/users.png" alt="Users" class="users-img">
+          <div class="users-text" id="users-text-panel">
+            <p>The answer is simpler than you think. <strong>Become user 0.</strong></p>
+            <p>Build something for yourself that immediately solves a problem you already have — in the simplest way possible. Use it.</p>
+            <p>If it fixes your problem, share it with people. Real users will follow.</p>
+            <p>You're not starting from scratch — you're taking advantage of <strong>domain knowledge you already have.</strong></p>
+            <div class="users-label">
+              <span class="users-label-main">Problem-Solution Fit</span>
+              <span class="users-label-sub"><iconify-icon icon="noto:heart-hands"></iconify-icon> Dogfooding</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: Demo Time -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <div class="slide-eyebrow">Theory complete</div>
+        </div>
+        <div class="slide-content slide-content--center">
+          <div class="title-card-inner">
+            <h1 class="title-main">Ready?</h1>
+            <p class="title-sub">Let's build something live — from idea to deployed in one session</p>
+            <div class="title-divider"></div>
+            <div class="title-tools">
+              <span class="title-tool">ChatGPT</span>
+              <span class="title-sep">→</span>
+              <span class="title-tool">Replit</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Tool Intros -->
+      <section class="slide" data-slide="9">
+        <div class="slide-header">
+          <h2>The 2 Free Tools</h2>
+        </div>
+        <div class="slide-content slide-content--center">
+          <div class="tools-grid tools-grid--two">
+            <div class="tool-card">
+              <div class="tool-step">Prep</div>
+              <div class="tool-icon tool-icon--brand"><iconify-icon icon="simple-icons:openai"></iconify-icon></div>
+              <h3 class="tool-name">ChatGPT</h3>
+              <p class="tool-token-hint">dozens of prompts before hitting a daily cap</p>
+              <div class="tool-badge">Free tier ✓</div>
+            </div>
+            <div class="tool-card tool-card--featured tool-card--crowned">
+              <iconify-icon icon="noto:crown" class="tool-crown"></iconify-icon>
+              <div class="tool-step">Build &amp; Ship</div>
+              <div class="tool-icon tool-icon--brand">
+                <iconify-icon icon="simple-icons:replit"></iconify-icon>
+              </div>
+              <h3 class="tool-name">Replit</h3>
+              <p class="tool-token-hint">can cut you off after a single large build prompt</p>
+              <div class="tool-badge">Free tier ✓</div>
+            </div>
+          </div>
+          <div class="tools-token-note">
+            <span class="tools-token-label">Token Economics 📈🤓</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide B: The Solution — Digital Business Card -->
+      <section class="slide">
+        <div class="slide-header">
+          <h2>So what do you build first? <span class="dbc-title-accent">A digital business card.</span></h2>
+        </div>
+        <div class="slide-content slide-content--center">
+          <img src="./assets/screenshots/digital-business-card.png" alt="Digital business card example" class="dbc-preview-img">
+          <div class="dbc-cards-row">
+
+            <div class="dbc-card">
+              <div class="dbc-card-icon"><iconify-icon icon="noto:handshake"></iconify-icon></div>
+              <strong>Built for this moment</strong>
+            </div>
+
+            <div class="dbc-card">
+              <div class="dbc-card-icon"><iconify-icon icon="noto:artist-palette"></iconify-icon></div>
+              <strong>You are user 0</strong>
+            </div>
+
+            <div class="dbc-card">
+              <div class="dbc-card-icon"><iconify-icon icon="noto:sparkles"></iconify-icon></div>
+              <strong>Flex on your friends</strong>
+            </div>
+
+            <div class="dbc-card dbc-card--highlight">
+              <div class="dbc-card-icon"><iconify-icon icon="noto:high-voltage"></iconify-icon></div>
+              <strong>Static — the technically safe first build</strong>
+              <span>Ships on the first prompt, no token issues stopping launch</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide C: — Digital Business Card Examples -->
+      <section class="slide">
+        <div class="slide-content">
+          <div class="screenshot-gallery">
+            <div class="gallery-item"><img src="./assets/screenshots/digital_businesscard_tattoo.png" alt="Tattoo artist card"></div>
+            <div class="gallery-item"><img src="./assets/screenshots/digital_businesscard_bakery.png" alt="Bakery card"></div>
+            <div class="gallery-item"><img src="./assets/screenshots/digital_businesscard_minigame.png" alt="Mini game card"></div>
+            <div class="gallery-item"><img src="./assets/screenshots/digital_businesscard_myspace-vibes.png" alt="Myspace vibes card"></div>
+            <div class="gallery-item"><img src="./assets/screenshots/digital_businesscard_photographer.png" alt="Photographer card"></div>
+            <div class="gallery-item"><img src="./assets/screenshots/digital_businesscard_professional-cv-download.png" alt="Professional CV card"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+           BASIC PATH
+           ═══════════════════════════════════════════ -->
+
+      <!-- Slide 10: ChatGPT - Basic Path -->
+      <section class="slide" data-slide="10">
+        <div class="slide-header header-compact">
+          <h2>Step 1: Think with ChatGPT</h2>
+        </div>
+        <div class="slide-content">
+          <div class="flex-col-fill">
+            <div class="flex-col-fill" style="gap:0.4rem;flex:none;">
+              <h3 class="prompt-section-label">Initial Prompt</h3>
+              <div class="prompt-highlight-line prompt-highlight-line--top">⚠ <em>"I am a non-technical person learning how to vibe-code with Replit."</em></div>
+              <div class="prompt-box small">
+                <pre><code>I want to build a digital business card for myself.
+
+I will use this link on Instagram and LinkedIn in place of "linktree".
+
+It's your job to ask me questions to figure out:
+- What I do and who I want to reach with this card
+- What the ONE main action I want visitors to take is (book a call, download my CV, view my portfolio, message me, etc.)
+- My social links
+- How I want it to look and feel
+
+Keep asking until you have everything needed to write the full Replit prompt with no room for misunderstanding.</code></pre>
+                <div class="prompt-highlight-line">⚠ <em>"All styling must be mobile first using relative units instead of fixed dimensions."</em></div>
+              </div>
+            </div>
+            <div class="prompt-arrow">↓</div>
+            <div class="prompt-split-layout">
+              <div class="prompt-col">
+                <h3 class="prompt-section-label">Final Prompt</h3>
+                <div class="prompt-box">
+                  <pre><code>Build a single-page, mobile-first digital business card using static HTML + CSS + vanilla JS (no frameworks). It must work on mobile and desktop.
+
+Content (exact)
+
+Name: Kristina Mladenova
+
+Job title: Interactive Ads Expert
+
+Tagline (exact, keep styling as-is): — ᴡɪᴛʜ ʟᴏᴠᴇ & ᴄᴏꜰꜰᴇᴇ 🎈🧸
+
+Social links (icons only, no text):
+
+LinkedIn: https://www.linkedin.com/in/kmladenova/
+
+GitHub: https://github.com/live-codes/livecodes
+
+Each opens in a new tab with rel="noopener noreferrer"
+
+Main CTA button (big):
+
+Label: PORTFOLIO
+
+Link for now: https://www.google.com
+
+Opens in new tab with rel="noopener noreferrer"
+
+Layout requirements
+
+A vertical card centered on the page that feels like a "digital business card."
+
+The card container must be ~90% of viewport height (min-height: 90vh) with margins around it so it never touches edges.
+
+Inside the card: photo at top, then name/title/tagline, then icon row, then big Portfolio button.
+
+CRITICAL — Responsive rules (no exceptions):
+- Mobile-first: design for small screens first, then scale up
+- Zero hardcoded px values for widths, heights, font sizes, or spacing
+- All font sizes: rem or em only
+- All spacing (padding, margin, gap): rem or em only
+- Layout widths: %, vw, max-width with %, or clamp()
+- Use flexbox or grid — never fixed pixel positioning
+- The card must look finished and complete on first load on any screen size
+
+Photo requirements
+
+Use an image placeholder file named profile.jpg in the project root.
+
+Display it as a rounded rectangle (not a circle), with a subtle neon outline or glow.
+
+If image is missing, show a nice placeholder block that still fits the design.
+
+Style requirements (cyberpunk, bold, CrazyLabs vibe)
+
+Background: black
+
+Primary neon accent: #dbfe01
+
+Text: white + neon accent
+
+Buttons:
+
+Default buttons are transparent black, neon outline, neon text, bold
+
+Portfolio button is a filled neon pill (background #dbfe01, text black), bold, slightly larger
+
+Use a bold, modern font stack (system fonts are fine) with strong typography. All font-size values must use rem or em — never px.
+
+Add subtle grain/scanline feel (CSS-only overlay OK) but keep readable.
+
+ASCII watermark (behind the card)
+
+Place this ASCII art behind the card as a faint watermark, centered, low opacity, and not interfering with readability:
+
+  .---------.
+  |.-------.|
+  ||>run#  ||
+  ||       ||
+  |"-------'|etf
+.-^---------^-.
+| ---~   AMiGA|
+"-------------'
+
+
+It must look like a background layer and remain visible behind the card.
+
+Terminal-type animation + cursor indicator (core interaction)
+
+Implement a terminal boot-up typing animation on page load:
+
+The card content (name/title/tagline/buttons/icons) should appear as if it's being "initialized."
+
+Show a top small "terminal header area" inside the card (above the photo or overlayed neatly) that types:
+
+> booting profile...
+
+> loading links...
+
+> ready
+
+Use a blinking cursor block (e.g. █ or ▋) at the end while typing.
+
+After the boot sequence completes, the cursor can keep blinking and the UI stays interactive.
+
+The animation must not make the page unusable:
+
+Social icons and Portfolio button become clickable once "ready" appears.
+
+Optional but desired: a subtle "typing" sound is NOT required (do not add audio unless asked).
+
+Icons
+
+Use react-icons via CDN only if possible with static setup; otherwise use inline SVG icons that resemble LinkedIn and GitHub.
+
+The icons should be neon (#dbfe01) and slightly glow on hover.
+
+Icons have no text labels.
+
+Files to create
+
+Create exactly these files:
+
+index.html
+
+styles.css
+
+script.js
+
+(expects) profile.jpg (placeholder; don't generate the image file, just reference it)
+
+Implementation notes
+
+No build step. Must run by opening index.html.
+
+Use clean semantic HTML.
+
+Use CSS for neon outlines/glows, button hover effects, scanlines overlay.
+
+Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code></pre>
+                </div>
+              </div>
+              <div class="prompt-preview-col">
+                <h3 class="prompt-section-label">UI Image Preview</h3>
+                <div class="prompt-image-row">
+                  <div class="prompt-image-item">
+                    <p class="img-label">ChatGPT mockup</p>
+                    <img src="./assets/screenshots/ui-mockup.png" alt="UI Mockup">
+                  </div>
+                  <div class="prompt-image-item">
+                    <p class="img-label">Profile picture (AI generated)</p>
+                    <img src="./assets/images/kristina-m.png" alt="Kristina AI portrait">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Replit Build - Basic Path -->
+      <section class="slide" data-slide="11">
+        <div class="slide-header">
+          <h2>Step 2: Build in Replit</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row">
+              <ol class="step-list horizontal">
+                <li>Configure: Dev framework → HTML, CSS, JS → <strong>Remix</strong></li>
+                <li>Paste your final prompt + profile picture + ui mockup from ChatGPT</li>
+                <li>Press Enter — watch it build</li>
+              </ol>
+            </div>
+            <div class="video-container">
+              <video class="slide-video" controls preload="metadata">
+                <source src="./assets/videos/replit-build-prompt.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Replit Corrections - Basic Path -->
+      <!-- Slide 9: Publish - Basic Path -->
+      <section class="slide" data-slide="13">
+        <div class="slide-header">
+          <h2>Step 3: Ship It</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row">
+              <ol class="step-list horizontal">
+                <li>Click <strong>Publish</strong></li>
+                <li>Share your link</li>
+              </ol>
+            </div>
+            <div class="video-container">
+              <video class="slide-video" controls preload="metadata">
+                <source src="./assets/videos/publish.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: Live result -->
+      <section class="slide">
+        <div class="slide-header">
+          <h2>The result — click to open</h2>
+        </div>
+        <div class="slide-content slide-content--center">
+          <a href="https://linvcodes.github.io/digitalbusinesscard/" target="_blank" rel="noopener noreferrer" class="live-preview-link">
+            <iframe src="https://linvcodes.github.io/digitalbusinesscard/" class="live-preview-iframe" scrolling="no" tabindex="-1"></iframe>
+            <div class="live-preview-overlay">
+              <span>↗ Open live site</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+           ADVANCED PATH
+           ═══════════════════════════════════════════ -->
+
+      <!-- ═══════════════════════════════════════════
+           CLOSING
+           ═══════════════════════════════════════════ -->
+
+      <!-- Slide: Closing -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <div class="slide-eyebrow">CrazyForAI presents</div>
+        </div>
+        <div class="slide-content slide-content--center">
+          <div class="title-card-inner">
+            <h1 class="title-main">That's a Wrap <span class="title-accent">✦</span></h1>
+            <div class="title-divider"></div>
+            <p class="closing-question">Questions?</p>
+            <p class="title-sub">Do you have an app idea you haven't built yet?</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+           HACKER MODE
+           ═══════════════════════════════════════════ -->
+
+      <!-- Slide: Same model, real internal tool -->
+      <section class="slide">
+        <div class="slide-header">
+          <h2>Same mental model. Same tool. <span class="dbc-title-accent">A real internal product.</span></h2>
+        </div>
+        <div class="slide-content slide-content--center">
+          <img src="./assets/screenshots/asset-manager.png" alt="Asset management tool built with Replit" class="hacker-tool-img">
+          <p class="hacker-tool-caption">I used the same theory — user 0, static-first, AI-assisted — to build an internal tool that eliminated two of my most common tickets: fix bugs and replace assets.</p>
+        </div>
+      </section>
+
+      <!-- Slide: Replit Credits Hack - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>Pro Hack: Edit After Hitting Replit Credits</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row">
+              <ol class="step-list horizontal">
+                <li>Download your finished files</li>
+                <li>Send them to ChatGPT with your improvements</li>
+                <li>Copy, paste &amp; save</li>
+              </ol>
+            </div>
+            <div class="video-container">
+              <video class="slide-video" controls preload="metadata">
+                <source src="./assets/videos/pro-hack-edit-after-replit-credits.mov" type="video/quicktime">
+                <source src="./assets/videos/pro-hack-edit-after-replit-credits.mov" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: GitHub Pages - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>Free Hosting Forever: GitHub Pages</h2>
+        </div>
+        <div class="slide-content">
+          <div class="video-slide-layout">
+            <div class="steps-row steps-col">
+              <p class="steps-desc">Don't want to pay for Replit hosting? Move your site to GitHub Pages — it's free, permanent, and takes 5 minutes.</p>
+              <ol class="step-list horizontal">
+                <li>Export your project from Replit</li>
+                <li>Push to a GitHub repository</li>
+                <li>Enable GitHub Pages in repo settings</li>
+                <li>Your site is live at <strong>username.github.io/repo</strong></li>
+              </ol>
+            </div>
+            <div class="video-container">
+              <video class="slide-video" controls preload="metadata">
+                <source src="./assets/videos/host-with-github-pages.mov" type="video/quicktime">
+                <source src="./assets/videos/host-with-github-pages.mov" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="slide-nav">
+      <button class="nav-arrow nav-prev" onclick="prevSlide()" aria-label="Previous slide">‹</button>
+      <img src="./assets/images/CL-logo-big.png" alt="CrazyLabs" class="cl-watermark">
+      <button class="nav-arrow nav-next" onclick="nextSlide()" aria-label="Next slide">›</button>
+    </div>
+
+    <!-- Progress Dots -->
+    <div class="progress-dots"></div>
+
+
+
+    <!-- Stopwatch -->
+    <div id="stopwatch" class="stopwatch">20:00</div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+
+  </body>
+</html>
