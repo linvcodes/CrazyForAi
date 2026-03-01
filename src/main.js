@@ -9,6 +9,7 @@ const progressDotsContainer = document.querySelector('.progress-dots');
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   // Create one progress dot per slide
@@ -56,6 +57,11 @@ function updateSlides() {
   // Update UI
   updateNavigation();
   updateProgressDots();
+
+  // Reset users slide reveal when leaving
+  if (usersContent && currentSlide !== USERS_SLIDE_INDEX) {
+    usersContent.classList.remove('users-revealed');
+  }
 }
 
 function updateNavigation() {
@@ -75,10 +81,16 @@ function updateProgressDots() {
   });
 }
 
+// Users slide reveal index
+const usersSlideEl = document.querySelector('.slide--users');
+const USERS_SLIDE_INDEX = usersSlideEl ? [...slides].indexOf(usersSlideEl) : -1;
+const usersContent = document.getElementById('users-content');
+
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' || e.key === ' ') {
     e.preventDefault();
+    swStart();
     nextSlide();
   } else if (e.key === 'ArrowLeft') {
     e.preventDefault();
@@ -89,7 +101,49 @@ document.addEventListener('keydown', (e) => {
   } else if (e.key === 'End') {
     e.preventDefault();
     goToSlide(totalSlides - 1);
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (currentSlide === USERS_SLIDE_INDEX && usersContent) {
+      usersContent.classList.add('users-revealed');
+    }
+  } else if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (currentSlide === USERS_SLIDE_INDEX && usersContent) {
+      usersContent.classList.remove('users-revealed');
+    }
   }
+});
+
+// Speed controls for all videos
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.slide-video').forEach(video => {
+    const speeds = [0.5, 1, 1.5, 2, 3];
+    const bar = document.createElement('div');
+    bar.className = 'video-speed-bar';
+    speeds.forEach(s => {
+      const btn = document.createElement('button');
+      btn.className = 'video-speed-btn';
+      btn.textContent = s + 'x';
+      if (s === 1) btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        video.playbackRate = s;
+        bar.querySelectorAll('.video-speed-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+      bar.appendChild(btn);
+    });
+    video.parentElement.appendChild(bar);
+
+    video.addEventListener('play', () => {
+      if (video.requestFullscreen) video.requestFullscreen();
+      else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+    });
+
+    video.addEventListener('ended', () => {
+      if (document.exitFullscreen) document.exitFullscreen();
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    });
+  });
 });
 
 // Touch/swipe support for mobile
@@ -126,3 +180,47 @@ window.prevSlide = prevSlide;
 window.goToSlide = goToSlide;
 
 console.log('CrazyForAI — Navigation initialized');
+
+// Stopwatch — counts down from 20:00, starts on first ArrowRight
+const stopwatchEl = document.getElementById('stopwatch');
+let swStarted = false;
+let swTotal = 20 * 60; // seconds
+let swRemaining = swTotal;
+let swInterval = null;
+
+function swTick() {
+  swRemaining--;
+  const m = Math.floor(Math.abs(swRemaining) / 60);
+  const s = Math.abs(swRemaining) % 60;
+  const neg = swRemaining < 0 ? '-' : '';
+  stopwatchEl.textContent = neg + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+  stopwatchEl.classList.toggle('warn', swRemaining <= 300 && swRemaining > 0);
+  stopwatchEl.classList.toggle('over', swRemaining <= 0);
+}
+
+function swStart() {
+  if (swStarted) return;
+  swStarted = true;
+  swInterval = setInterval(swTick, 1000);
+}
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+document.querySelectorAll('.slide img:not(.cl-watermark):not(.speaker-image)').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('active');
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+  lightboxImg.src = '';
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') lightbox.classList.remove('active');
+});
