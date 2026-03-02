@@ -62,6 +62,15 @@ function updateSlides() {
   if (usersContent && currentSlide !== USERS_SLIDE_INDEX) {
     usersContent.classList.remove('users-revealed');
   }
+
+  // Load iframe only when its slide is active, unload when leaving
+  if (lazyIframe && LAZY_IFRAME_INDEX !== -1) {
+    if (currentSlide === LAZY_IFRAME_INDEX) {
+      if (!lazyIframe.src) lazyIframe.src = lazyIframe.dataset.src;
+    } else {
+      lazyIframe.src = '';
+    }
+  }
 }
 
 function updateNavigation() {
@@ -80,6 +89,11 @@ function updateProgressDots() {
     }
   });
 }
+
+// Lazy-load iframe only when its slide is active
+const lazyIframe = document.querySelector('iframe[data-src]');
+const lazyIframeSlideEl = lazyIframe ? lazyIframe.closest('.slide') : null;
+const LAZY_IFRAME_INDEX = lazyIframeSlideEl ? [...slides].indexOf(lazyIframeSlideEl) : -1;
 
 // Users slide reveal index
 const usersSlideEl = document.querySelector('.slide--users');
