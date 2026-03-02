@@ -422,7 +422,8 @@ ol.step-list.horizontal li::before {
 .video-speed-bar {
   display: flex;
   gap: 0.3rem;
-  align-self: flex-end;
+  width: 100%;
+  justify-content: center;
 }
 
 .video-speed-btn {

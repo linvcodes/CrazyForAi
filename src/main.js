@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = document.createElement('button');
       btn.className = 'video-speed-btn';
       btn.textContent = s + 'x';
-      if (s === 1) btn.classList.add('active');
+      if (s === 0.5) btn.classList.add('active');
       btn.addEventListener('click', () => {
         video.playbackRate = s;
         bar.querySelectorAll('.video-speed-btn').forEach(b => b.classList.remove('active'));
@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       bar.appendChild(btn);
     });
+    video.playbackRate = 0.5;
     video.parentElement.appendChild(bar);
 
     video.addEventListener('play', () => {
