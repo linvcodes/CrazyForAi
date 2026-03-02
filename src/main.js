@@ -54,6 +54,12 @@ function updateSlides() {
   const offset = -currentSlide * 100;
   slidesContainer.style.transform = `translateX(${offset}%)`;
 
+  // Entrance animation on incoming slide
+  slides.forEach(s => s.classList.remove('slide--entering'));
+  const entering = slides[currentSlide];
+  entering.classList.add('slide--entering');
+  entering.addEventListener('animationend', () => entering.classList.remove('slide--entering'), { once: true });
+
   // Update UI
   updateNavigation();
   updateProgressDots();
