@@ -71,10 +71,15 @@ function updateSlides() {
 
   // Load iframe only when its slide is active, unload when leaving
   if (lazyIframe && LAZY_IFRAME_INDEX !== -1) {
+    const loader = document.getElementById('iframe-loader');
     if (currentSlide === LAZY_IFRAME_INDEX) {
-      if (!lazyIframe.src) lazyIframe.src = lazyIframe.dataset.src;
+      if (!lazyIframe.getAttribute('src')) {
+        if (loader) loader.style.display = '';
+        lazyIframe.src = lazyIframe.dataset.src;
+      }
     } else {
-      lazyIframe.src = '';
+      lazyIframe.removeAttribute('src');
+      if (loader) loader.style.display = '';
     }
   }
 }
@@ -137,14 +142,15 @@ document.addEventListener('keydown', (e) => {
 // Speed controls for all videos
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.slide-video').forEach(video => {
-    const speeds = [0.5, 1, 1.5, 2, 3];
+    const defaultSpeed = parseFloat(video.dataset.defaultSpeed) || 0.5;
+    const speeds = [0.5, 1, 1.25, 1.5, 2, 3];
     const bar = document.createElement('div');
     bar.className = 'video-speed-bar';
     speeds.forEach(s => {
       const btn = document.createElement('button');
       btn.className = 'video-speed-btn';
       btn.textContent = s + 'x';
-      if (s === 0.5) btn.classList.add('active');
+      if (s === defaultSpeed) btn.classList.add('active');
       btn.addEventListener('click', () => {
         video.playbackRate = s;
         bar.querySelectorAll('.video-speed-btn').forEach(b => b.classList.remove('active'));
@@ -152,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       bar.appendChild(btn);
     });
-    video.playbackRate = 0.5;
+    video.playbackRate = defaultSpeed;
     video.parentElement.appendChild(bar);
 
     video.addEventListener('play', () => {
@@ -169,31 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Touch/swipe support for mobile
 let touchStartX = 0;
+let touchStartY = 0;
 let touchEndX = 0;
 
 slidesContainer.addEventListener('touchstart', (e) => {
   touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
 }, { passive: true });
 
 slidesContainer.addEventListener('touchend', (e) => {
   touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-}, { passive: true });
-
-function handleSwipe() {
-  const swipeThreshold = 50;
-  const diff = touchStartX - touchEndX;
-
-  if (Math.abs(diff) > swipeThreshold) {
-    if (diff > 0) {
-      // Swiped left - next slide
-      nextSlide();
-    } else {
-      // Swiped right - previous slide
-      prevSlide();
-    }
+  const touchEndY = e.changedTouches[0].screenY;
+  const diffX = touchStartX - touchEndX;
+  const diffY = touchStartY - touchEndY;
+  // Only navigate if horizontal movement dominates and exceeds threshold
+  if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+    diffX > 0 ? nextSlide() : prevSlide();
   }
-}
+}, { passive: true });
 
 // Expose functions globally for onclick handlers
 window.nextSlide = nextSlide;
@@ -202,10 +201,10 @@ window.goToSlide = goToSlide;
 
 console.log('CrazyForAI — Navigation initialized');
 
-// Stopwatch — counts down from 20:00, starts on first ArrowRight
+// Stopwatch — counts down from 25:00, starts on first ArrowRight
 const stopwatchEl = document.getElementById('stopwatch');
 let swStarted = false;
-let swTotal = 20 * 60; // seconds
+let swTotal = 25 * 60; // seconds
 let swRemaining = swTotal;
 let swInterval = null;
 
@@ -215,6 +214,15 @@ function swTick() {
   const s = Math.abs(swRemaining) % 60;
   const neg = swRemaining < 0 ? '-' : '';
   stopwatchEl.textContent = neg + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+
+  // Pulse red on every 5-minute mark (except start)
+  const elapsed = swTotal - swRemaining;
+  if (elapsed > 0 && elapsed % 300 === 0) {
+    stopwatchEl.classList.remove('pulse-alert');
+    void stopwatchEl.offsetWidth; // reflow to restart animation
+    stopwatchEl.classList.add('pulse-alert');
+  }
+
   stopwatchEl.classList.toggle('warn', swRemaining <= 300 && swRemaining > 0);
   stopwatchEl.classList.toggle('over', swRemaining <= 0);
 }
