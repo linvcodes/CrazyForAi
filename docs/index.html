@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <title>CrazyForAI - Building Software Without Coding</title>
     <meta name="theme-color" content="#0a0a0a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <script type="module" crossorigin src="./assets/index--MtEV3DT.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-s_lpOj2H.css">
+    <script type="module" crossorigin src="./assets/index-CVThEfpT.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CO-126mO.css">
   </head>
   <body>
     <div class="slides-container">
@@ -331,6 +331,7 @@
           <div class="tools-token-note">
             <span class="tools-token-label">Token Economics 📈🤓</span>
           </div>
+          <p class="tools-motto"><strong>Measure twice, cut once.</strong> It's easier to build something right the first time than to try and fix something broken.</p>
         </div>
       </section>
 
@@ -612,7 +613,7 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
               </ol>
             </div>
             <div class="video-container">
-              <video class="slide-video" controls preload="metadata">
+              <video class="slide-video" controls preload="metadata" data-default-speed="1.25">
                 <source src="./assets/videos/publish.mp4" type="video/mp4">
               </video>
             </div>
@@ -625,8 +626,12 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
         <div class="slide-header">
           <h2>The result</h2>
         </div>
-        <div class="slide-content slide-content--center" style="padding:0;overflow:hidden;">
-          <iframe data-src="https://linvcodes.github.io/digitalbusinesscard/" class="live-preview-iframe" allow="autoplay" style="pointer-events:all;"></iframe>
+        <div class="slide-content slide-content--center" style="padding:0;overflow:hidden;position:relative;">
+          <div class="iframe-loader" id="iframe-loader">
+            <div class="iframe-spinner"></div>
+            <span>Loading…</span>
+          </div>
+          <iframe data-src="https://crazyforai-card.replit.app" class="live-preview-iframe" allow="autoplay" style="pointer-events:all;" onload="document.getElementById('iframe-loader').style.display='none'"></iframe>
         </div>
       </section>
 
@@ -636,25 +641,6 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
 
       <!-- ═══════════════════════════════════════════
            CLOSING
-           ═══════════════════════════════════════════ -->
-
-      <!-- Slide: Closing -->
-      <section class="slide">
-        <div class="slide-header header-compact">
-          <div class="slide-eyebrow">CrazyForAI presents</div>
-        </div>
-        <div class="slide-content slide-content--center">
-          <div class="title-card-inner">
-            <h1 class="title-main">That's a Wrap</h1>
-            <h1 class="title-main"><span class="title-accent">✦</span></h1>
-            <p class="closing-question">QUESTIONS</p>
-            <p class="title-sub">Do you have an app idea you haven't built yet?</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════════
-           HACKER MODE
            ═══════════════════════════════════════════ -->
 
       <!-- Slide: Same model, real internal tool -->
@@ -667,6 +653,24 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
           <p class="hacker-tool-caption">I used the same theory — user 0, static-first, AI-assisted — to build an internal tool that eliminated two of my most common tickets: fix bugs and replace assets.</p>
         </div>
       </section>
+
+      <!-- Slide: Closing -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <div class="slide-eyebrow">CrazyForAI presents</div>
+        </div>
+        <div class="slide-content slide-content--center">
+          <div class="title-card-inner">
+            <h1 class="title-main">That's a Wrap</h1>
+            <h1 class="title-main"><span class="title-accent">✦</span></h1>
+            <p class="title-sub hacker-hint"><iconify-icon icon="noto:construction"></iconify-icon> Hacker Mode slides this way →</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+           HACKER MODE
+           ═══════════════════════════════════════════ -->
 
       <!-- Slide: Replit Credits Hack - Hacker Mode -->
       <section class="slide">
@@ -736,7 +740,7 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
 
 
     <!-- Stopwatch -->
-    <div id="stopwatch" class="stopwatch">20:00</div>
+    <div id="stopwatch" class="stopwatch">25:00</div>
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
