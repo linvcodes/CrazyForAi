@@ -1420,8 +1420,10 @@ ol.step-list.horizontal li::before {
 }
 
 .tree-timeline--testing .tree-timeline-row {
-  grid-template-columns: auto 1fr;
-  gap: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .tree-timeline-label {
@@ -1487,6 +1489,15 @@ ol.step-list.horizontal li::before {
   padding-top: 0.2rem;
   border-top: 1px solid rgba(255,255,255,0.06);
   grid-column: 1 / -1;
+}
+
+.tree-timeline--accent .tree-timeline-extras {
+  color: var(--accent);
+}
+
+.tree-timeline--accent.tree-timeline--testing .tree-timeline-label,
+.tree-timeline--accent.tree-timeline--testing .tree-timeline-time {
+  color: var(--accent);
 }
 
 .split-divider {
