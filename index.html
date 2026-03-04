@@ -36,10 +36,10 @@
         <div class="slide-content slide-content--center">
           <div class="speaker-layout">
             <div class="speaker-image-col">
-              <img src="./assets/images/kristinamladenova.png" alt="Kristina Mladenova" class="speaker-image">
+              <img src="./assets/images/kristinamladenova.png" alt="Kristina" class="speaker-image">
             </div>
             <div class="speaker-info-col">
-              <h2 class="speaker-name">Kristina Mladenova</h2>
+              <h2 class="speaker-name">Kristina</h2>
               <p class="speaker-title">Interactive Ads Expert · CrazyLabs</p>
               <p class="speaker-bio">I build playable ads and internal tools — all with AI.</p>
               <div class="speaker-videos">
@@ -60,31 +60,43 @@
         <div class="slide-header">
           <h2>Agenda</h2>
         </div>
-        <div class="slide-content slide-content--center">
-          <div class="agenda-blocks">
-            <div class="agenda-block agenda-block--theory">
-              <div class="agenda-block-num">01</div>
-              <iconify-icon icon="ri:book-open-line" class="agenda-block-icon"></iconify-icon>
-              <div class="agenda-block-title">Theory of Software<br>as a Product</div>
+        <div class="slide-content slide-content--agenda">
+          <div class="agenda-main">
+            <div class="agenda-blocks">
+              <div class="agenda-block agenda-block--theory">
+                <div class="agenda-block-num">01</div>
+                <iconify-icon icon="ri:book-open-line" class="agenda-block-icon"></iconify-icon>
+                <div class="agenda-block-title">Theory of Software<br>as a Product</div>
+              </div>
+              <div class="agenda-block-arrow">→</div>
+              <div class="agenda-block agenda-block--practical">
+                <div class="agenda-block-num">02</div>
+                <iconify-icon icon="ri:tools-line" class="agenda-block-icon"></iconify-icon>
+                <div class="agenda-block-title">Practical Building</div>
+              </div>
             </div>
-            <div class="agenda-block-arrow">→</div>
-            <div class="agenda-block agenda-block--practical">
-              <div class="agenda-block-num">02</div>
-              <iconify-icon icon="ri:tools-line" class="agenda-block-icon"></iconify-icon>
-              <div class="agenda-block-title">Practical Building</div>
-            </div>
-            <div class="agenda-block-arrow">→</div>
-            <div class="agenda-block agenda-block--hacker">
-              <div class="agenda-block-num">03</div>
-              <div class="agenda-block-badge">Bonus</div>
-              <div class="agenda-block-title">Hacker Mode</div>
+            <div class="agenda-takehome">
+              <div class="agenda-takehome-header">
+                <iconify-icon icon="ri:gift-line"></iconify-icon>
+                <span>Take-Home Library: Hacker Mode</span>
+              </div>
+              <p class="agenda-takehome-desc">
+                QR code link to this presentation, a place to upload your projects, and a copy button to grab the starter prompt that takes you from idea to launch in 5 minutes. Plus bonus slides:
+              </p>
+              <div class="agenda-takehome-items">
+                <span><iconify-icon icon="ri:rocket-line"></iconify-icon> Next steps after publish</span>
+                <span><iconify-icon icon="ri:money-dollar-circle-line"></iconify-icon> Free hosting</span>
+                <span><iconify-icon icon="ri:edit-line"></iconify-icon> Edit without credits</span>
+                <span><iconify-icon icon="ri:smartphone-line"></iconify-icon> Turn into an app</span>
+              </div>
+              <button class="agenda-skip-bonus" id="skip-to-bonus">Skip to Bonus <iconify-icon icon="ri:arrow-right-line"></iconify-icon></button>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Slide: Manual dev vs AI side by side -->
-      <section class="slide">
+      <section class="slide slide--compare" id="compare-slide">
         <div class="slide-header">
           <h2>The old way vs AI</h2>
         </div>
@@ -114,14 +126,11 @@
                   </div>
                   <div class="pc-table">
                     <div class="pc-rows">
-                      <div class="pc-row pc-pro">✓ Business focus</div>
-                      <div class="pc-row pc-con">✗ Expensive</div>
-                      <div class="pc-row pc-pro"></div>
-                      <div class="pc-row pc-con">✗ Slow back-and-forth</div>
                     </div>
                     <div class="pc-stats">
-                      <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:money-bag"></iconify-icon> Money</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--high pc-bar--accent"></div></div></div>
                       <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:hourglass-not-done"></iconify-icon> Time</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--med pc-bar--accent"></div></div></div>
+                      <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:money-bag"></iconify-icon> Money</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--high pc-bar--accent"></div></div></div>
+                      <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:high-voltage"></iconify-icon> Energy</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--low pc-bar--accent"></div></div></div>
                     </div>
                   </div>
                 </div>
@@ -136,13 +145,10 @@
                   </div>
                   <div class="pc-table">
                     <div class="pc-rows">
-                      <div class="pc-row pc-pro">✓ Full control</div>
-                      <div class="pc-row pc-con">✗ Years to ship</div>
-                      <div class="pc-row pc-pro">✓ Lifelong skill</div>
-                      <div class="pc-row pc-con"></div>
                     </div>
                     <div class="pc-stats">
                       <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:hourglass-not-done"></iconify-icon> Time</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--high pc-bar--accent"></div></div></div>
+                      <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:money-bag"></iconify-icon> Money</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--low pc-bar--accent"></div></div></div>
                       <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:high-voltage"></iconify-icon> Energy</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--high pc-bar--accent"></div></div></div>
                     </div>
                   </div>
@@ -163,7 +169,20 @@
                 <div class="tree-timeline-extras">+ hosting, domain, security, infra on top</div>
               </div>
               <div class="tree-connector-v"></div>
-              <div class="tree-label">Possible outcomes</div>
+              <div class="tree-label">Testing</div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-timeline tree-timeline--testing">
+                <div class="tree-timeline-row">
+                  <span class="tree-timeline-label">Alpha</span>
+                  <span class="tree-timeline-time">Internal</span>
+                </div>
+                <div class="tree-timeline-row">
+                  <span class="tree-timeline-label">Beta</span>
+                  <span class="tree-timeline-time">Hundreds</span>
+                </div>
+              </div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-label">LIVE <span class="live-rocket">🚀</span></div>
               <div class="tree-connector-v"></div>
               <div class="tree-split">
                 <div class="tree-split-col">
@@ -235,6 +254,13 @@
                   </div>
                 </div>
               </div>
+              <div class="pc-table">
+                <div class="pc-stats">
+                  <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:hourglass-not-done"></iconify-icon> Time</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--low-med pc-bar--accent"></div></div></div>
+                  <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:money-bag"></iconify-icon> Money</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--low pc-bar--accent"></div></div></div>
+                  <div class="pc-stat"><span class="pc-stat-label"><iconify-icon icon="noto:high-voltage"></iconify-icon> Energy</span><div class="pc-bar"><div class="pc-bar-fill pc-bar--low-med pc-bar--accent"></div></div></div>
+                </div>
+              </div>
               <div class="tree-connector-v"></div>
               <div class="tree-timeline tree-timeline--accent">
                 <div class="tree-timeline-row">
@@ -249,7 +275,20 @@
                 </div>
               </div>
               <div class="tree-connector-v"></div>
-              <div class="tree-label">Possible outcomes</div>
+              <div class="tree-label">Testing</div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-timeline tree-timeline--accent tree-timeline--testing">
+                <div class="tree-timeline-row">
+                  <span class="tree-timeline-label">Alpha</span>
+                  <span class="tree-timeline-time">Internal</span>
+                </div>
+                <div class="tree-timeline-row">
+                  <span class="tree-timeline-label">Beta</span>
+                  <span class="tree-timeline-time">Hundreds</span>
+                </div>
+              </div>
+              <div class="tree-connector-v"></div>
+              <div class="tree-label tree-label--live-ai">LIVE <span class="live-rocket" id="ai-rocket">🚀</span></div>
               <div class="tree-connector-v"></div>
               <div class="tree-split tree-split--no-bar">
                 <div class="tree-split-col">
@@ -420,7 +459,7 @@ Keep asking until you have everything needed to write the full Replit prompt wit
 
 Content (exact)
 
-Name: Kristina Mladenova
+Name: Kristina
 
 Job title: Interactive Ads Expert
 
@@ -647,9 +686,30 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
         <div class="slide-header">
           <h2>Same mental model. Same tool. <span class="dbc-title-accent">A real internal product.</span></h2>
         </div>
-        <div class="slide-content slide-content--center">
-          <img src="./assets/screenshots/asset-manager.png" alt="Asset management tool built with Replit" class="hacker-tool-img">
-          <p class="hacker-tool-caption">I used the same theory — user 0, static-first, AI-assisted — to build an internal tool that eliminated two of my most common tickets: fix bugs and replace assets.</p>
+        <div class="slide-content">
+          <div class="internal-tool-layout">
+            <div class="internal-tool-img-col">
+              <img src="./assets/screenshots/asset-manager.png" alt="Asset management tool built with Replit" class="internal-tool-img">
+            </div>
+            <div class="internal-tool-desc">
+              <div class="internal-tool-problem">
+                <h3>The Problem</h3>
+                <p>I had 2 types of repetitive tickets:</p>
+                <ol>
+                  <li><strong>Fix bugs</strong> — always the same ones, endless find-and-replace and copy-pasting</li>
+                  <li><strong>Replace assets</strong> — "change this asset into this other asset" across entire codebases</li>
+                </ol>
+              </div>
+              <div class="internal-tool-solution">
+                <h3>The Solution</h3>
+                <p>A website that <strong>auto-fixes bugs</strong> and lets you <strong>drag-and-drop replace assets</strong> — so I don't have to do it myself anymore.</p>
+              </div>
+              <div class="internal-tool-result">
+                <iconify-icon icon="ri:trophy-line"></iconify-icon>
+                <p>I never get these tickets now. I focus on creating <strong>minigames</strong> and <strong>internal tools</strong> — the fun stuff.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -711,6 +771,7 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
                 <li>Push to a GitHub repository</li>
                 <li>Enable GitHub Pages in repo settings</li>
                 <li>Your site is live at <strong>username.github.io/repo</strong></li>
+                <li>Buy your own domain (GoDaddy/NameSilo) and configure it in GitHub Settings</li>
               </ol>
             </div>
             <div class="video-container">
@@ -720,6 +781,126 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
               </video>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Slide: PWA Test - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>Test Your Website as an App (Before Building Native)</h2>
+        </div>
+        <div class="slide-content">
+          <div class="pwa-slide-layout">
+            <div class="pwa-slide-visual">
+              <img src="./assets/screenshots/pwa_test_homescreen.png" alt="Add to Home Screen flow" class="pwa-slide-img">
+            </div>
+            <div class="pwa-slide-info">
+              <p class="pwa-slide-desc">Before committing to native development, you can test your product as a real app instantly. Add it to your home screen and validate the full-screen experience, performance, and UX without publishing to an app store.</p>
+              <div class="pwa-advantages">
+                <strong>PWA Advantages</strong>
+                <ul>
+                  <li>No app store approval</li>
+                  <li>Instant updates (no reinstall required)</li>
+                  <li>Works offline</li>
+                  <li>Same full-screen app experience</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: PWA Convert - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>Turn It Into a Real PWA With One Prompt</h2>
+        </div>
+        <div class="slide-content">
+          <div class="pwa-slide-layout">
+            <div class="pwa-slide-visual">
+              <img src="./assets/screenshots/pwa_replit_convert.png" alt="Replit PWA conversion flow" class="pwa-slide-img">
+            </div>
+            <div class="pwa-slide-info">
+              <div class="pwa-prompt-block">
+                <div class="pwa-prompt-label">Prompt</div>
+                <p>Convert my website into a production-ready Progressive Web App. Add manifest.json, service worker with offline caching, enable installability for Android + iOS, add iOS standalone meta tags, use display: standalone, include theme color #0a0a0a, add 192×192 and 512×512 icons.</p>
+              </div>
+              <p class="pwa-slide-desc">Replit can generate the full PWA configuration automatically — including service workers, manifest, and installability.</p>
+              <p class="pwa-slide-note">Replit can also build fully native mobile apps. However, using a PWA is often more convenient for rapid iteration — updates deploy instantly, no reinstall needed.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: Native App Options - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>How to Turn This Into a Native App</h2>
+        </div>
+        <div class="slide-content">
+          <div class="native-compare">
+            <div class="native-col">
+              <div class="native-col-header">Option 1 — Wrap It With Capacitor</div>
+              <p class="native-col-sub">Web → Native Shell</p>
+              <div class="native-section">
+                <div class="native-label">What it is</div>
+                <p>Use Capacitor to package the existing website as a native Android (APK) and iOS app.</p>
+              </div>
+              <div class="native-section">
+                <div class="native-label native-label--pro">Pros</div>
+                <ul>
+                  <li>Fastest path to native</li>
+                  <li>Reuses existing web code</li>
+                  <li>Single codebase</li>
+                  <li>Access to device APIs via plugins</li>
+                  <li>Can publish to App Store / Play Store</li>
+                  <li>Lower cost to maintain</li>
+                </ul>
+              </div>
+              <div class="native-section">
+                <div class="native-label native-label--con">Cons</div>
+                <ul>
+                  <li>Still web-rendered (WebView-based)</li>
+                  <li>Slight performance limitations for heavy 3D/games</li>
+                  <li>Native feel depends on web UI quality</li>
+                </ul>
+              </div>
+              <div class="native-best-for"><strong>Best for:</strong> MVPs, SaaS apps, dashboards, content apps, internal tools.</div>
+            </div>
+            <div class="native-divider"></div>
+            <div class="native-col">
+              <div class="native-col-header">Option 2 — Rebuild in Native</div>
+              <p class="native-col-sub">Flutter / React Native / Swift / Kotlin</p>
+              <div class="native-section">
+                <div class="native-label">What it is</div>
+                <p>Rebuild the app using a true native or cross-platform mobile framework.</p>
+              </div>
+              <div class="native-section">
+                <div class="native-label native-label--pro">Pros</div>
+                <ul>
+                  <li>Maximum performance</li>
+                  <li>True native UI components</li>
+                  <li>Full hardware access</li>
+                  <li>Better for complex animations / heavy graphics</li>
+                  <li>More scalable long-term</li>
+                </ul>
+              </div>
+              <div class="native-section">
+                <div class="native-label native-label--con">Cons</div>
+                <ul>
+                  <li>Higher development time</li>
+                  <li>Higher cost</li>
+                  <li>Separate mobile architecture</li>
+                  <li>Slower iteration vs web/PWA</li>
+                </ul>
+              </div>
+              <div class="native-best-for"><strong>Best for:</strong> High-performance apps, games, hardware-intensive features, long-term mobile-first products.</div>
+            </div>
+          </div>
+          <p class="native-conclusion"><strong>Capacitor</strong> is ideal when you already have a working web product and want rapid store deployment. <strong>Rebuilding native</strong> is best when performance, hardware integration, or long-term mobile scalability is critical.</p>
         </div>
       </section>
 
@@ -739,12 +920,11 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
 
 
     <!-- Stopwatch -->
-    <div id="stopwatch" class="stopwatch">25:00</div>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-      <img id="lightbox-img" src="" alt="">
+    <div class="stopwatch-group">
+      <div id="stopwatch" class="stopwatch">25:00</div>
+      <div id="slide-timer" class="slide-timer">1:55</div>
     </div>
+
 
     <script type="module" src="./src/main.js"></script>
   </body>
