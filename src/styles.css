@@ -866,7 +866,8 @@ ol.step-list.horizontal li::before {
 
 .speaker-image-col {
   flex: 0 0 42%;
-  height: 100%;
+  height: 70%;
+  align-self: center;
   border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
