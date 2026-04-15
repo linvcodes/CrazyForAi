@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <script type="module" crossorigin src="./assets/index-usDg6jtF.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BAlcqgao.css">
+    <script type="module" crossorigin src="./assets/index-CjlEHJro.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-bWdS2Urz.css">
   </head>
   <body>
     <div class="slides-container">
@@ -40,16 +40,21 @@
               <img src="./assets/images/kristinamladenova.png" alt="Kristina" class="speaker-image">
             </div>
             <div class="speaker-info-col">
-              <h2 class="speaker-name">Kristina</h2>
+              <h2 class="speaker-name">Kristina Mladenova</h2>
               <p class="speaker-title">Interactive Ads Expert · CrazyLabs</p>
               <p class="speaker-bio">I build playable ads and internal tools — all with AI.</p>
               <div class="speaker-videos">
                 <div class="speaker-video-item">
                   <video src="./assets/videos/playable0.mov" autoplay loop muted playsinline></video>
+                  <p>Multimaze</p>
                 </div>
                 <div class="speaker-video-item">
                   <video src="./assets/videos/playable1.mov" autoplay loop muted playsinline></video>
+                  <p>Lamar</p>
                 </div>
+              </div>
+              <div class="speaker-company">
+                <p class="speaker-company-desc">CrazyLabs is a mobile game publisher with billions of downloads across their portfolio and multiple titles on global top charts — 10 years of turning simple ideas into hyper-casual hits. Interactive ads in mobile gaming drive high-intent installs and CPI optimization; in web and app contexts, they serve engagement and feature previews — making them a powerful tool for testing market need before going into full production.</p>
               </div>
             </div>
           </div>
@@ -375,27 +380,31 @@
         </div>
         <div class="slide-content slide-content--center">
           <img src="./assets/screenshots/digital-business-card.png" alt="Digital business card example" class="dbc-preview-img">
+          <p class="dbc-framing">The demo project for this talk is the same thing I built for myself. Built for this room. Built for this moment.</p>
           <div class="dbc-cards-row">
 
             <div class="dbc-card">
-              <div class="dbc-card-icon"><iconify-icon icon="noto:handshake"></iconify-icon></div>
-              <strong>Built for this moment</strong>
+              <div class="dbc-card-icon"><iconify-icon icon="noto:memo"></iconify-icon></div>
+              <strong>I defined my parameters</strong>
+              <span>Marketing, developer, student, networking events — domain knowledge I already had</span>
+            </div>
+
+            <div class="dbc-card">
+              <div class="dbc-card-icon"><iconify-icon icon="noto:thinking-face"></iconify-icon></div>
+              <strong>I found the problem</strong>
+              <span>"Can I see something?" — nothing live to show. A personal marketing gap.</span>
             </div>
 
             <div class="dbc-card">
               <div class="dbc-card-icon"><iconify-icon icon="noto:artist-palette"></iconify-icon></div>
-              <strong>You are user 0</strong>
-            </div>
-
-            <div class="dbc-card">
-              <div class="dbc-card-icon"><iconify-icon icon="noto:sparkles"></iconify-icon></div>
-              <strong>Flex on your friends</strong>
+              <strong>I was user 0</strong>
+              <span>Built it for myself first. If it solved my problem, it would solve it for others.</span>
             </div>
 
             <div class="dbc-card dbc-card--highlight">
               <div class="dbc-card-icon"><iconify-icon icon="noto:high-voltage"></iconify-icon></div>
-              <strong>Static — the technically safe first build</strong>
-              <span>Ships on the first prompt, no token issues stopping launch</span>
+              <strong>Static — the right technical choice</strong>
+              <span>No backend needed. Ships on the first prompt, no token issues stopping launch.</span>
             </div>
 
           </div>
@@ -427,7 +436,7 @@
           <div class="flex-col-fill">
             <div class="flex-col-fill" style="gap:0.4rem;flex:none;">
               <h3 class="prompt-section-label">Initial Prompt</h3>
-              <div class="prompt-highlight-line prompt-highlight-line--top">⚠ <em>"I am a non-technical person learning how to vibe-code with Replit."</em></div>
+              <div class="prompt-highlight-line prompt-highlight-line--top">⚠ Don't write <em>"You are an expert"</em> — this forces AI to perform confidence instead of helping. Give it the context of your problem: <em>"I am a non-technical person learning how to vibe-code with Replit."</em> or <em>"I am a developer student working on my first SaaS, I want to build x."</em></div>
               <div class="prompt-box small">
                 <pre><code>I want to build a digital business card for myself.
 
@@ -894,6 +903,254 @@ Use JS for typing animation, cursor blinking, and the staged reveal of UI.</code
             </div>
           </div>
           <p class="native-conclusion"><strong>Capacitor</strong> is ideal when you already have a working web product and want rapid store deployment. <strong>Rebuilding native</strong> is best when performance, hardware integration, or long-term mobile scalability is critical.</p>
+        </div>
+      </section>
+
+      <!-- Slide: OpenRouter + Model Selection - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>OpenRouter: One API, Every Model</h2>
+        </div>
+        <div class="slide-content">
+          <div class="hacker-two-col">
+            <div class="hacker-col">
+              <p class="hacker-col-intro">OpenRouter is a single API endpoint that routes to 200+ models — Claude, GPT-4o, Gemini, Llama, Mistral — with unified billing. You write the code once and swap models by changing one string.</p>
+              <div class="hacker-code-block">
+                <div class="hacker-code-label">openrouter.ai/api/v1 — drop-in OpenAI compatible</div>
+                <pre><code>fetch("https://openrouter.ai/api/v1/chat/completions", {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer YOUR_KEY",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    model: "anthropic/claude-3-5-haiku",
+    messages: [{ role: "user", content: "..." }]
+  })
+})</code></pre>
+              </div>
+            </div>
+            <div class="hacker-col">
+              <div class="hacker-model-table">
+                <div class="hacker-table-header">
+                  <span>Model</span><span>Best for</span><span>Cost/1M tokens</span>
+                </div>
+                <div class="hacker-table-row hacker-table-row--highlight">
+                  <span>Claude 3.5 Haiku</span><span>Fast tasks, bulk</span><span>~$0.80 in / $4 out</span>
+                </div>
+                <div class="hacker-table-row">
+                  <span>Claude 3.5 Sonnet</span><span>Complex reasoning</span><span>~$3 in / $15 out</span>
+                </div>
+                <div class="hacker-table-row hacker-table-row--highlight">
+                  <span>Gemini Flash 2.0</span><span>High volume, cheap</span><span>~$0.10 in / $0.40 out</span>
+                </div>
+                <div class="hacker-table-row">
+                  <span>Llama 3.3 70B</span><span>Open source, free tier</span><span>~$0.12 in / $0.30 out</span>
+                </div>
+                <div class="hacker-table-row hacker-table-row--highlight">
+                  <span>DeepSeek R1</span><span>Reasoning, low cost</span><span>~$0.55 in / $2.19 out</span>
+                </div>
+              </div>
+              <p class="hacker-tip"><iconify-icon icon="ri:lightbulb-line"></iconify-icon> Rule: use Haiku/Flash for classification, summarisation, and bulk jobs. Reserve Sonnet/Opus only for tasks that genuinely need deep reasoning.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: ZhipuAI + Token Cost Control - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>Cut Your AI Bill by 10× — Token Cost Strategy</h2>
+        </div>
+        <div class="slide-content">
+          <div class="hacker-two-col">
+            <div class="hacker-col">
+              <div class="hacker-section-title"><iconify-icon icon="ri:china-line"></iconify-icon> ZhipuAI — Claude-Compatible API</div>
+              <p class="hacker-col-intro">ZhipuAI (智谱AI) offers GLM-4 models with Claude-compatible API format at a fraction of the cost. Useful for China-accessible deployments or simply cutting prototype costs to near zero.</p>
+              <div class="hacker-badge-row">
+                <span class="hacker-badge">GLM-4-Flash: free tier available</span>
+                <span class="hacker-badge">OpenAI-compatible endpoints</span>
+                <span class="hacker-badge">bigmodel.cn</span>
+              </div>
+              <div class="hacker-cost-tip">
+                <div class="hacker-cost-tip-label">Real cost example</div>
+                <p>1,000 user messages/day × 500 tokens avg = 500K tokens/day.<br>
+                  Haiku: <strong>~$0.40/day</strong> · Sonnet: <strong>~$1.50/day</strong> · GPT-4o: <strong>~$5/day</strong></p>
+              </div>
+            </div>
+            <div class="hacker-col">
+              <div class="hacker-section-title"><iconify-icon icon="ri:coins-line"></iconify-icon> 5 Ways to Save on Tokens</div>
+              <ol class="hacker-numbered-list">
+                <li><strong>System prompt caching</strong> — Anthropic charges 10% to cache a prompt and 0% to reuse it. Pin your system prompt once per session.</li>
+                <li><strong>Trim context aggressively</strong> — every token in the conversation history costs money. Summarise old turns instead of appending forever.</li>
+                <li><strong>Use the smallest model that works</strong> — Haiku is 15× cheaper than Sonnet. Route simple tasks there first, escalate only on failure.</li>
+                <li><strong>Batch where latency doesn't matter</strong> — Anthropic Batch API is 50% cheaper for async jobs (reports, email drafts, nightly syncs).</li>
+                <li><strong>Stream + abort early</strong> — if the first 100 tokens already answer the question, cancel the stream. You only pay for what's generated.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: HTML/CSS/JS → Playable Ad for Feature Testing - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>Your MVP as a Playable Ad — Test Before You Build</h2>
+        </div>
+        <div class="slide-content">
+          <div class="hacker-playable-layout">
+            <div class="hacker-playable-intro">
+              <p>A playable ad is a self-contained HTML/CSS/JS file that runs inside any ad network — Meta, Google, TikTok, IronSource. It's also the fastest way to validate a product idea: ship a 30-second interactive demo to 10,000 users before writing a single line of your real backend.</p>
+            </div>
+            <div class="hacker-playable-cols">
+              <div class="hacker-playable-col">
+                <div class="hacker-section-title"><iconify-icon icon="ri:function-line"></iconify-icon> What you can measure</div>
+                <ul class="hacker-check-list">
+                  <li>Tap / interaction rate — do users engage with the core mechanic?</li>
+                  <li>Drop-off point — where do they stop?</li>
+                  <li>CTA conversion — how many click "Download" / "Sign Up"?</li>
+                  <li>Variant A/B — swap one variable per ad creative, measure lift</li>
+                  <li>Audience targeting signal — Meta will find your high-intent users</li>
+                </ul>
+              </div>
+              <div class="hacker-playable-col">
+                <div class="hacker-section-title"><iconify-icon icon="ri:terminal-box-line"></iconify-icon> How to build one in an afternoon</div>
+                <ol class="hacker-numbered-list">
+                  <li>Build your core mechanic in vanilla HTML/CSS/JS (Claude does this in minutes)</li>
+                  <li>Add a <code>postMessage("click")</code> call on your CTA button — ad networks intercept this to trigger store redirect</li>
+                  <li>Inline all assets (base64 images, embedded fonts) — the ad must be a single self-contained file</li>
+                  <li>Add 5 lines of analytics: timestamp, interaction count, drop-off event, CTA fired</li>
+                  <li>Upload to Meta Ads Manager → Playable format → run with $20 test budget</li>
+                </ol>
+              </div>
+              <div class="hacker-playable-col">
+                <div class="hacker-section-title"><iconify-icon icon="ri:bar-chart-line"></iconify-icon> What a 40% interaction rate tells you</div>
+                <p class="hacker-col-intro">In mobile, 40%+ interaction rate on a playable ad = product-market signal. You've validated the core mechanic resonates before spending a month building it. Under 15% = rethink the mechanic, not the marketing.</p>
+                <div class="hacker-badge-row">
+                  <span class="hacker-badge hacker-badge--green">&gt;40% interact = build it</span>
+                  <span class="hacker-badge hacker-badge--yellow">15–40% = iterate mechanic</span>
+                  <span class="hacker-badge hacker-badge--red">&lt;15% = wrong idea</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: What an MVP Must Include - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>What an MVP Actually Needs</h2>
+        </div>
+        <div class="slide-content">
+          <div class="hacker-mvp-layout">
+            <div class="hacker-mvp-top">
+              <div class="hacker-callout hacker-callout--lead">
+                <iconify-icon icon="ri:focus-3-line"></iconify-icon>
+                <p>The best MVP isn't the smallest thing you can build — it's the smallest thing that still <strong>proves your core assumption.</strong> One critical user action (the "aha moment"). Everything else is noise.</p>
+              </div>
+            </div>
+            <div class="hacker-mvp-cols">
+              <div class="hacker-mvp-col">
+                <div class="hacker-section-title"><iconify-icon icon="ri:checkbox-circle-line"></iconify-icon> What's in</div>
+                <ul class="hacker-check-list">
+                  <li><strong>Core loop</strong> — user does something, sees a result. That's the whole product for now.</li>
+                  <li><strong>Barebones UI</strong> — clickable and understandable. Not polished. Ship ugly.</li>
+                  <li><strong>Simple data</strong> — localStorage, Firebase, or hardcoded. No custom backend yet.</li>
+                  <li><strong>Analytics hook</strong> — PostHog or even just a Google Sheet via a fetch call. You must learn what users actually do.</li>
+                  <li><strong>One feedback path</strong> — Tally form, WhatsApp group, or "reply to this email." Talk to your first 50 users directly.</li>
+                </ul>
+              </div>
+              <div class="hacker-mvp-col">
+                <div class="hacker-section-title"><iconify-icon icon="ri:close-circle-line"></iconify-icon> What's out</div>
+                <ul class="hacker-cross-list">
+                  <li>Auth (use localStorage until users ask for it)</li>
+                  <li>Scalability &amp; edge cases</li>
+                  <li>Settings, preferences, profiles</li>
+                  <li>Mobile app (PWA is enough)</li>
+                  <li>Custom design system</li>
+                  <li>A pitch deck before a working product</li>
+                </ul>
+                <div class="hacker-callout" style="margin-top: auto;">
+                  <iconify-icon icon="ri:gamepad-line"></iconify-icon>
+                  <p>For games or playable ads, the MVP can be even tighter — <strong>a single 10–20 second loop</strong> that proves retention or click-through is enough to decide whether it's worth scaling.</p>
+                </div>
+              </div>
+              <div class="hacker-mvp-col">
+                <div class="hacker-section-title"><iconify-icon icon="ri:code-s-slash-line"></iconify-icon> Best stack to start</div>
+                <ol class="hacker-numbered-list">
+                  <li><strong>Vanilla HTML / CSS / JS</strong> — fastest path to something clickable. No setup, no architecture decisions, no framework opinions.</li>
+                  <li><strong>Vite</strong> — instant dev server, hot reload, zero config. Add it when vanilla feels slow.</li>
+                  <li><strong>No backend</strong> — localStorage or mock data until it becomes painful.</li>
+                </ol>
+                <p class="hacker-col-intro" style="margin-top: 0.75rem;">Only upgrade when you <em>feel</em> the pain: UI getting complex → add React. Need shared state → hooks. Need data persistence → Supabase. Speed of iteration beats everything at this stage.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide: From AI Output to Business - Hacker Mode -->
+      <section class="slide">
+        <div class="slide-header header-compact">
+          <span class="path-badge path-advanced">Hacker Mode</span>
+          <h2>From AI Output to Actual Business</h2>
+        </div>
+        <div class="slide-content">
+          <div class="hacker-business-layout">
+            <div class="hacker-business-path">
+              <div class="hacker-biz-step">
+                <div class="hacker-biz-num">01</div>
+                <div class="hacker-biz-body">
+                  <strong>Validate with a playable/landing page</strong>
+                  <p>Before writing backend code, get 100 signups or $500 in pre-orders. If you can't get strangers to give you their email, the idea isn't ready.</p>
+                </div>
+              </div>
+              <div class="hacker-biz-arrow">↓</div>
+              <div class="hacker-biz-step">
+                <div class="hacker-biz-num">02</div>
+                <div class="hacker-biz-body">
+                  <strong>Build the smallest chargeable version</strong>
+                  <p>Charge from day one — even a symbolic amount filters out noise. In Macedonia: bank transfer / company invoice for B2B, cash on delivery for physical, or <strong>LemonSqueezy / Paddle</strong> for digital products (they handle VAT and work without a local entity).</p>
+                </div>
+              </div>
+              <div class="hacker-biz-arrow">↓</div>
+              <div class="hacker-biz-step">
+                <div class="hacker-biz-num">03</div>
+                <div class="hacker-biz-body">
+                  <strong>Choose a monetisation model that matches the value</strong>
+                  <p>For free tools: <strong>ads</strong> (Google AdSense, Carbon) give revenue from day one with no checkout friction — ideal for developer tools and content. Subscription = predictable MRR. Usage-based compounds with scale. Most AI tools win on a hybrid.</p>
+                </div>
+              </div>
+              <div class="hacker-biz-arrow">↓</div>
+              <div class="hacker-biz-step">
+                <div class="hacker-biz-num">04</div>
+                <div class="hacker-biz-body">
+                  <strong>Distribute before you scale infrastructure</strong>
+                  <p>Reddit, X, LinkedIn, ProductHunt, niche Discord servers. Organic distribution with a working product beats paid ads at early stage. When organic stalls, <em>then</em> run playable ad experiments.</p>
+                </div>
+              </div>
+            </div>
+            <div class="hacker-business-stack">
+              <div class="hacker-section-title"><iconify-icon icon="ri:stack-line"></iconify-icon> Zero-cost founding stack</div>
+              <div class="hacker-stack-grid">
+                <div class="hacker-stack-item"><span class="hacker-stack-label">Hosting</span><span>Vercel / GitHub Pages</span></div>
+                <div class="hacker-stack-item"><span class="hacker-stack-label">Database</span><span>Supabase (free tier)</span></div>
+                <div class="hacker-stack-item"><span class="hacker-stack-label">Auth</span><span>Clerk / Supabase Auth</span></div>
+                <div class="hacker-stack-item"><span class="hacker-stack-label">Payments</span><span>LemonSqueezy / Paddle</span></div>
+                <div class="hacker-stack-item"><span class="hacker-stack-label">AI API</span><span>OpenRouter / ZhipuAI</span></div>
+                <div class="hacker-stack-item"><span class="hacker-stack-label">Analytics</span><span>PostHog / Vercel</span></div>
+                <div class="hacker-stack-item"><span class="hacker-stack-label">Ads</span><span>Google AdSense / Carbon</span></div>
+                <div class="hacker-stack-item"><span class="hacker-stack-label">Forms</span><span>Tally (free)</span></div>
+                <div class="hacker-stack-item"><span class="hacker-stack-label">Email</span><span>Resend (3k/mo free)</span></div>
+              </div>
+              <p class="hacker-tip"><iconify-icon icon="ri:money-dollar-circle-line"></iconify-icon> Total cost to $1K MRR: often under $50/month in infrastructure. The constraint is distribution, not tech.</p>
+            </div>
+          </div>
         </div>
       </section>
 
